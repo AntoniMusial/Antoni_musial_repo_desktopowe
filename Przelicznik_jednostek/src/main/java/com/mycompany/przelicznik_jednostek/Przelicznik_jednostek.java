@@ -260,7 +260,7 @@ public class Przelicznik_jednostek extends javax.swing.JFrame {
         String kelwiny = jTFKelwiny.getText();
         int kelwiny_value = Integer.parseInt(kelwiny);
         
-        int celcjusze_value = kelwiny_value + 273;
+        int celcjusze_value = Math.abs(celcjusze_value) + 273;
         jTFCelcjusze.setText(""+celcjusze_value);
     }//GEN-LAST:event_jButton1ActionPerformed
 
