@@ -4,6 +4,9 @@
  */
 package com.mycompany.przelicznik_jednostek;
 
+import java.lang.reflect.Array;
+import javax.lang.model.util.Elements;
+
 /**
  *
  * @author musialantoni
@@ -31,6 +34,10 @@ public class Przelicznik_jednostek extends javax.swing.JFrame {
         jPTresc = new javax.swing.JPanel();
         jTBTresc = new javax.swing.JTabbedPane();
         jPStrona1 = new javax.swing.JPanel();
+        jLTytulTemperatura = new javax.swing.JLabel();
+        jTFKelwiny = new javax.swing.JTextField();
+        jTFCelcjusze = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
         jPStrona2 = new javax.swing.JPanel();
         jMBMenu = new javax.swing.JMenuBar();
         jMPlik = new javax.swing.JMenu();
@@ -62,7 +69,6 @@ public class Przelicznik_jednostek extends javax.swing.JFrame {
         setBackground(java.awt.Color.darkGray);
         setMaximumSize(new java.awt.Dimension(500, 400));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(500, 400));
         setSize(new java.awt.Dimension(500, 400));
 
         jPTresc.setBackground(java.awt.Color.pink);
@@ -75,18 +81,73 @@ public class Przelicznik_jednostek extends javax.swing.JFrame {
         jPStrona1.setBackground(java.awt.Color.pink);
         jPStrona1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        jLTytulTemperatura.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLTytulTemperatura.setForeground(java.awt.Color.white);
+        jLTytulTemperatura.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLTytulTemperatura.setText("Przelicznik Kelwinów na Celcjusze");
+        jLTytulTemperatura.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+
+        jTFKelwiny.setBackground(java.awt.Color.pink);
+        jTFKelwiny.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jTFKelwiny.setForeground(java.awt.Color.white);
+        jTFKelwiny.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTFKelwiny.setText("Kelwiny");
+
+        jTFCelcjusze.setBackground(java.awt.Color.pink);
+        jTFCelcjusze.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jTFCelcjusze.setForeground(java.awt.Color.white);
+        jTFCelcjusze.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTFCelcjusze.setText("Celcjusze");
+
+        jButton1.setBackground(java.awt.Color.pink);
+        jButton1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jButton1.setForeground(java.awt.Color.white);
+        jButton1.setText("Przelicz");
+        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPStrona1Layout = new javax.swing.GroupLayout(jPStrona1);
         jPStrona1.setLayout(jPStrona1Layout);
         jPStrona1Layout.setHorizontalGroup(
             jPStrona1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 467, Short.MAX_VALUE)
+            .addGroup(jPStrona1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLTytulTemperatura, javax.swing.GroupLayout.DEFAULT_SIZE, 443, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPStrona1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPStrona1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTFCelcjusze, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(139, 139, 139))
+            .addGroup(jPStrona1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPStrona1Layout.createSequentialGroup()
+                    .addContainerGap(158, Short.MAX_VALUE)
+                    .addComponent(jTFKelwiny, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(139, 139, 139)))
         );
         jPStrona1Layout.setVerticalGroup(
             jPStrona1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 324, Short.MAX_VALUE)
+            .addGroup(jPStrona1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLTytulTemperatura)
+                .addGap(110, 110, 110)
+                .addComponent(jTFCelcjusze, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(98, Short.MAX_VALUE))
+            .addGroup(jPStrona1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPStrona1Layout.createSequentialGroup()
+                    .addGap(111, 111, 111)
+                    .addComponent(jTFKelwiny, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(183, Short.MAX_VALUE)))
         );
 
-        jTBTresc.addTab("tab2", jPStrona1);
+        jTBTresc.addTab("Temperatura", jPStrona1);
 
         jPStrona2.setBackground(java.awt.Color.pink);
         jPStrona2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -102,7 +163,7 @@ public class Przelicznik_jednostek extends javax.swing.JFrame {
             .addGap(0, 324, Short.MAX_VALUE)
         );
 
-        jTBTresc.addTab("tab1", jPStrona2);
+        jTBTresc.addTab("Odległość", jPStrona2);
 
         javax.swing.GroupLayout jPTrescLayout = new javax.swing.GroupLayout(jPTresc);
         jPTresc.setLayout(jPTrescLayout);
@@ -195,6 +256,14 @@ public class Przelicznik_jednostek extends javax.swing.JFrame {
        jOPHistoria.showMessageDialog(null, "Odleglosci: ");
     }//GEN-LAST:event_jMIPokazHistorieActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String kelwiny = jTFKelwiny.getText();
+        int kelwiny_value = Integer.parseInt(kelwiny);
+        
+        int celcjusze_value = kelwiny_value + 273;
+        jTFCelcjusze.setText(""+celcjusze_value);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -231,7 +300,9 @@ public class Przelicznik_jednostek extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JDialog jDHistoria;
+    private javax.swing.JLabel jLTytulTemperatura;
     private javax.swing.JMenuBar jMBMenu;
     private javax.swing.JMenuItem jMIPokazHistorie;
     private javax.swing.JMenuItem jMIZamknij;
@@ -242,5 +313,7 @@ public class Przelicznik_jednostek extends javax.swing.JFrame {
     private javax.swing.JPanel jPStrona2;
     private javax.swing.JPanel jPTresc;
     private javax.swing.JTabbedPane jTBTresc;
+    private javax.swing.JTextField jTFCelcjusze;
+    private javax.swing.JTextField jTFKelwiny;
     // End of variables declaration//GEN-END:variables
 }
