@@ -107,7 +107,6 @@ public class Przelicznik_jednostek extends javax.swing.JFrame {
         jPTresc.setForeground(java.awt.Color.white);
 
         jTBTresc.setBackground(java.awt.Color.yellow);
-        jTBTresc.setForeground(java.awt.Color.black);
         jTBTresc.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
 
         jPStrona1.setBackground(java.awt.Color.pink);
@@ -552,15 +551,15 @@ public class Przelicznik_jednostek extends javax.swing.JFrame {
         
         if ("Centymetry".equals(centymetry)) {
             metry = jTFMetry_Odleglosc.getText();
-            int metry_value = Integer.parseInt(metry);
+            double metry_value = Double.parseDouble(metry);
             
-            int centymetry_value = Math.abs(metry_value) * 100;
+            double centymetry_value = Math.abs(metry_value) * 100;
             jTFCentymetry_Odleglosc.setText(""+centymetry_value);
         } else if ("Metry".equals(metry)) {
             centymetry = jTFCentymetry_Odleglosc.getText();
-            int centymetry_value = Integer.parseInt(centymetry);
+            double centymetry_value = Double.parseDouble(centymetry);
             
-            int metry_value = Math.abs(centymetry_value) / 100;
+            double metry_value = Math.abs(centymetry_value) / 100;
             jTFMetry_Odleglosc.setText(""+metry_value);
         }
     }//GEN-LAST:event_jBPrzelicz_OdlegloscActionPerformed
