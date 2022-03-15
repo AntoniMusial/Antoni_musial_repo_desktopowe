@@ -23,9 +23,12 @@
 hs_err_pid*
 replay_pid*
 
-git init
-git add .
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/antoni.glowny@gmail.com/Antoni_musial_repo_desktopowe.git
-git push -u origin main
+**/nbproject/private/
+**/nbproject/Makefile-*.mk
+**/nbproject/Package-*.bash
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
