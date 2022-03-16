@@ -62,8 +62,6 @@ public class Chej_AntiVirus extends javax.swing.JFrame {
         jPLoading_screen.setMaximumSize(new java.awt.Dimension(480, 270));
         jPLoading_screen.setPreferredSize(new java.awt.Dimension(480, 270));
 
-        jLLoading_gif.setIcon(new javax.swing.ImageIcon("C:\\Users\\monst\\OneDrive\\Dokumenty\\NetBeansProjects\\Chej_AntiVirus\\src\\main\\java\\com\\mycompany\\chej_antivirus\\animation logo Chej - AntiViruz.gif")); // NOI18N
-
         javax.swing.GroupLayout jPLoading_screenLayout = new javax.swing.GroupLayout(jPLoading_screen);
         jPLoading_screen.setLayout(jPLoading_screenLayout);
         jPLoading_screenLayout.setHorizontalGroup(
@@ -73,7 +71,7 @@ public class Chej_AntiVirus extends javax.swing.JFrame {
         jPLoading_screenLayout.setVerticalGroup(
             jPLoading_screenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPLoading_screenLayout.createSequentialGroup()
-                .addComponent(jLLoading_gif, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLLoading_gif, javax.swing.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE)
                 .addContainerGap())
         );
 

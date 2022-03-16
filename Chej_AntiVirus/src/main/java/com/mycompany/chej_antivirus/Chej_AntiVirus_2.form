@@ -135,59 +135,24 @@
           </Layout>
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLLogo">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\monst\OneDrive\Desktop\wszystko\szko&#x142;a\ZADANIA\2 KLASA\Programowanie aplikacji desktopowych\Chej - AntiVirus\Logo\Chej AntiVirus Icon.png"/>
-                </Property>
-              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLExit">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\monst\OneDrive\Desktop\wszystko\szko&#x142;a\ZADANIA\2 KLASA\Programowanie aplikacji desktopowych\Chej - AntiVirus\ikony\Przyci&#x119;te\close.png"/>
-                </Property>
-              </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLExitMouseClicked"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLMinimize">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\monst\OneDrive\Desktop\wszystko\szko&#x142;a\ZADANIA\2 KLASA\Programowanie aplikacji desktopowych\Chej - AntiVirus\ikony\Przyci&#x119;te\minimalizuj.png"/>
-                </Property>
-              </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLMinimizeMouseClicked"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLInfo">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\monst\OneDrive\Desktop\wszystko\szko&#x142;a\ZADANIA\2 KLASA\Programowanie aplikacji desktopowych\Chej - AntiVirus\ikony\Przyci&#x119;te\o programie.png"/>
-                </Property>
-              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLEdit">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\monst\OneDrive\Desktop\wszystko\szko&#x142;a\ZADANIA\2 KLASA\Programowanie aplikacji desktopowych\Chej - AntiVirus\ikony\Przyci&#x119;te\edytuj.png"/>
-                </Property>
-              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLFile">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\monst\OneDrive\Desktop\wszystko\szko&#x142;a\ZADANIA\2 KLASA\Programowanie aplikacji desktopowych\Chej - AntiVirus\ikony\Przyci&#x119;te\plik.png"/>
-                </Property>
-              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLPremium">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\monst\OneDrive\Desktop\wszystko\szko&#x142;a\ZADANIA\2 KLASA\Programowanie aplikacji desktopowych\Chej - AntiVirus\ikony\Przyci&#x119;te\Premium.png"/>
-                </Property>
-              </Properties>
             </Component>
           </SubComponents>
         </Container>
@@ -241,7 +206,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jLSeparator" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jBLogin" pref="96" max="32767" attributes="0"/>
+                                  <Component id="jBLogin" pref="95" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -301,9 +266,6 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Trebuchet MS" size="24" style="1"/>
                     </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
-                    </Property>
                     <Property name="text" type="java.lang.String" value="Wkr&#xf3;tce..."/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="null"/>
@@ -320,12 +282,6 @@
                     </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Trebuchet MS" size="24" style="1"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
-                    </Property>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\monst\OneDrive\Desktop\wszystko\szko&#x142;a\ZADANIA\2 KLASA\Programowanie aplikacji desktopowych\Chej - AntiVirus\ikony\Przyci&#x119;te\virus scan.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Skanuj"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -345,9 +301,6 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Trebuchet MS" size="24" style="1"/>
                     </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
-                    </Property>
                     <Property name="text" type="java.lang.String" value="Wkr&#xf3;tce..."/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="null"/>
@@ -362,9 +315,6 @@
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="41" green="b0" red="f9" type="rgb"/>
                     </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
-                    </Property>
                     <Property name="text" type="java.lang.String" value="Rejestracja"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="null"/>
@@ -376,9 +326,6 @@
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="41" green="b0" red="f9" type="rgb"/>
                     </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
-                    </Property>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="null"/>
                     </Property>
@@ -387,9 +334,6 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLSeparator">
                   <Properties>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
-                    </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="text" type="java.lang.String" value="|"/>
                   </Properties>
@@ -423,11 +367,6 @@
               </Layout>
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="jPBackground">
-                  <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\monst\OneDrive\Desktop\wszystko\szko&#x142;a\ZADANIA\2 KLASA\Programowanie aplikacji desktopowych\Chej - AntiVirus\Logo\Logo Chej - AntiVirus t&#x142;o aplikacji.png"/>
-                    </Property>
-                  </Properties>
                 </Component>
               </SubComponents>
             </Container>

@@ -64,29 +64,17 @@ public class Chej_AntiVirus_2 extends javax.swing.JFrame {
         jPMenu_top.setMaximumSize(new java.awt.Dimension(1280, 28));
         jPMenu_top.setPreferredSize(new java.awt.Dimension(1280, 28));
 
-        jLLogo.setIcon(new javax.swing.ImageIcon("C:\\Users\\monst\\OneDrive\\Desktop\\wszystko\\szkoła\\ZADANIA\\2 KLASA\\Programowanie aplikacji desktopowych\\Chej - AntiVirus\\Logo\\Chej AntiVirus Icon.png")); // NOI18N
-
-        jLExit.setIcon(new javax.swing.ImageIcon("C:\\Users\\monst\\OneDrive\\Desktop\\wszystko\\szkoła\\ZADANIA\\2 KLASA\\Programowanie aplikacji desktopowych\\Chej - AntiVirus\\ikony\\Przycięte\\close.png")); // NOI18N
         jLExit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLExitMouseClicked(evt);
             }
         });
 
-        jLMinimize.setIcon(new javax.swing.ImageIcon("C:\\Users\\monst\\OneDrive\\Desktop\\wszystko\\szkoła\\ZADANIA\\2 KLASA\\Programowanie aplikacji desktopowych\\Chej - AntiVirus\\ikony\\Przycięte\\minimalizuj.png")); // NOI18N
         jLMinimize.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLMinimizeMouseClicked(evt);
             }
         });
-
-        jLInfo.setIcon(new javax.swing.ImageIcon("C:\\Users\\monst\\OneDrive\\Desktop\\wszystko\\szkoła\\ZADANIA\\2 KLASA\\Programowanie aplikacji desktopowych\\Chej - AntiVirus\\ikony\\Przycięte\\o programie.png")); // NOI18N
-
-        jLEdit.setIcon(new javax.swing.ImageIcon("C:\\Users\\monst\\OneDrive\\Desktop\\wszystko\\szkoła\\ZADANIA\\2 KLASA\\Programowanie aplikacji desktopowych\\Chej - AntiVirus\\ikony\\Przycięte\\edytuj.png")); // NOI18N
-
-        jLFile.setIcon(new javax.swing.ImageIcon("C:\\Users\\monst\\OneDrive\\Desktop\\wszystko\\szkoła\\ZADANIA\\2 KLASA\\Programowanie aplikacji desktopowych\\Chej - AntiVirus\\ikony\\Przycięte\\plik.png")); // NOI18N
-
-        jLPremium.setIcon(new javax.swing.ImageIcon("C:\\Users\\monst\\OneDrive\\Desktop\\wszystko\\szkoła\\ZADANIA\\2 KLASA\\Programowanie aplikacji desktopowych\\Chej - AntiVirus\\ikony\\Przycięte\\Premium.png")); // NOI18N
 
         javax.swing.GroupLayout jPMenu_topLayout = new javax.swing.GroupLayout(jPMenu_top);
         jPMenu_top.setLayout(jPMenu_topLayout);
@@ -133,7 +121,6 @@ public class Chej_AntiVirus_2 extends javax.swing.JFrame {
 
         jBWkrotce1.setBackground(new java.awt.Color(249, 176, 65));
         jBWkrotce1.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        jBWkrotce1.setForeground(java.awt.Color.black);
         jBWkrotce1.setText("Wkrótce...");
         jBWkrotce1.setBorder(null);
         jBWkrotce1.addActionListener(new java.awt.event.ActionListener() {
@@ -144,8 +131,6 @@ public class Chej_AntiVirus_2 extends javax.swing.JFrame {
 
         jBScan.setBackground(new java.awt.Color(249, 176, 65));
         jBScan.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        jBScan.setForeground(java.awt.Color.black);
-        jBScan.setIcon(new javax.swing.ImageIcon("C:\\Users\\monst\\OneDrive\\Desktop\\wszystko\\szkoła\\ZADANIA\\2 KLASA\\Programowanie aplikacji desktopowych\\Chej - AntiVirus\\ikony\\Przycięte\\virus scan.png")); // NOI18N
         jBScan.setText("Skanuj");
         jBScan.setBorder(null);
         jBScan.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -161,7 +146,6 @@ public class Chej_AntiVirus_2 extends javax.swing.JFrame {
 
         jBWkrotce2.setBackground(new java.awt.Color(249, 176, 65));
         jBWkrotce2.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        jBWkrotce2.setForeground(java.awt.Color.black);
         jBWkrotce2.setText("Wkrótce...");
         jBWkrotce2.setBorder(null);
         jBWkrotce2.addActionListener(new java.awt.event.ActionListener() {
@@ -171,16 +155,13 @@ public class Chej_AntiVirus_2 extends javax.swing.JFrame {
         });
 
         jBRegistration.setBackground(new java.awt.Color(249, 176, 65));
-        jBRegistration.setForeground(java.awt.Color.black);
         jBRegistration.setText("Rejestracja");
         jBRegistration.setBorder(null);
 
         jBLogin.setBackground(new java.awt.Color(249, 176, 65));
-        jBLogin.setForeground(java.awt.Color.black);
         jBLogin.setBorder(null);
         jBLogin.setLabel("Logowanie");
 
-        jLSeparator.setForeground(java.awt.Color.black);
         jLSeparator.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLSeparator.setText("|");
 
@@ -197,7 +178,7 @@ public class Chej_AntiVirus_2 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLSeparator)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jBLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE)))
+                        .addComponent(jBLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(jLMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jLMenuLayout.createSequentialGroup()
@@ -236,8 +217,6 @@ public class Chej_AntiVirus_2 extends javax.swing.JFrame {
         jPPanel.setBackground(java.awt.Color.blue);
         jPPanel.setMaximumSize(new java.awt.Dimension(1060, 692));
         jPPanel.setPreferredSize(new java.awt.Dimension(1060, 692));
-
-        jPBackground.setIcon(new javax.swing.ImageIcon("C:\\Users\\monst\\OneDrive\\Desktop\\wszystko\\szkoła\\ZADANIA\\2 KLASA\\Programowanie aplikacji desktopowych\\Chej - AntiVirus\\Logo\\Logo Chej - AntiVirus tło aplikacji.png")); // NOI18N
 
         javax.swing.GroupLayout jPPanelLayout = new javax.swing.GroupLayout(jPPanel);
         jPPanel.setLayout(jPPanelLayout);
