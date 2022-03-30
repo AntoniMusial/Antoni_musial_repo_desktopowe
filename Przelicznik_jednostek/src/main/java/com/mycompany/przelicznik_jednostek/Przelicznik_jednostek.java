@@ -4,9 +4,11 @@
  */
 package com.mycompany.przelicznik_jednostek;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Array;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.lang.model.util.Elements;
@@ -37,6 +39,8 @@ public class Przelicznik_jednostek extends javax.swing.JFrame {
         jOPHistoria = new javax.swing.JOptionPane();
         jDPomoc = new javax.swing.JDialog();
         jOptionPane1 = new javax.swing.JOptionPane();
+        jDOprogramie = new javax.swing.JDialog();
+        jOPOprogramie = new javax.swing.JOptionPane();
         jPTresc = new javax.swing.JPanel();
         jTBTresc = new javax.swing.JTabbedPane();
         jPStrona1 = new javax.swing.JPanel();
@@ -50,7 +54,7 @@ public class Przelicznik_jednostek extends javax.swing.JFrame {
         jLPomoc2_Temperatura = new javax.swing.JLabel();
         jLPomoc3_Temperatura = new javax.swing.JLabel();
         jLPomoc4_Temperatura = new javax.swing.JLabel();
-        jLZapisano = new javax.swing.JLabel();
+        jLZapisano1 = new javax.swing.JLabel();
         jPStrona2 = new javax.swing.JPanel();
         jLTytulOdleglosc = new javax.swing.JLabel();
         jTFCentymetry_Odleglosc = new javax.swing.JTextField();
@@ -62,6 +66,7 @@ public class Przelicznik_jednostek extends javax.swing.JFrame {
         jLPomoc2_Odleglosc = new javax.swing.JLabel();
         jLPomoc3_Odleglosc = new javax.swing.JLabel();
         jLPomoc4_Odleglosc = new javax.swing.JLabel();
+        jLZapisano2 = new javax.swing.JLabel();
         jMBMenu = new javax.swing.JMenuBar();
         jMPlik = new javax.swing.JMenu();
         jMIPokazHistorie = new javax.swing.JMenuItem();
@@ -110,6 +115,20 @@ public class Przelicznik_jednostek extends javax.swing.JFrame {
         jDPomocLayout.setVerticalGroup(
             jDPomocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jOptionPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
+        jOPOprogramie.setBackground(java.awt.Color.darkGray);
+        jOPOprogramie.setForeground(java.awt.Color.white);
+
+        javax.swing.GroupLayout jDOprogramieLayout = new javax.swing.GroupLayout(jDOprogramie.getContentPane());
+        jDOprogramie.getContentPane().setLayout(jDOprogramieLayout);
+        jDOprogramieLayout.setHorizontalGroup(
+            jDOprogramieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jOPOprogramie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        jDOprogramieLayout.setVerticalGroup(
+            jDOprogramieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jOPOprogramie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -210,10 +229,10 @@ public class Przelicznik_jednostek extends javax.swing.JFrame {
         jLPomoc4_Temperatura.setForeground(java.awt.Color.white);
         jLPomoc4_Temperatura.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
-        jLZapisano.setFont(new java.awt.Font("sansserif", 0, 12)); // NOI18N
-        jLZapisano.setForeground(java.awt.Color.green);
-        jLZapisano.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLZapisano.setPreferredSize(new java.awt.Dimension(44, 15));
+        jLZapisano1.setFont(new java.awt.Font("sansserif", 0, 10)); // NOI18N
+        jLZapisano1.setForeground(java.awt.Color.green);
+        jLZapisano1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLZapisano1.setPreferredSize(new java.awt.Dimension(44, 15));
 
         javax.swing.GroupLayout jPStrona1Layout = new javax.swing.GroupLayout(jPStrona1);
         jPStrona1.setLayout(jPStrona1Layout);
@@ -227,8 +246,8 @@ public class Przelicznik_jednostek extends javax.swing.JFrame {
                         .addComponent(jBReset_Temperatura, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jBPrzelicz_Temperatura, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(48, 48, 48)
-                .addComponent(jLZapisano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(jLZapisano1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(46, 46, 46))
             .addGroup(jPStrona1Layout.createSequentialGroup()
                 .addContainerGap()
@@ -266,7 +285,7 @@ public class Przelicznik_jednostek extends javax.swing.JFrame {
                                 .addGroup(jPStrona1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jBPrzelicz_Temperatura, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jBReset_Temperatura, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                                 .addComponent(jLPomoc1_Temperatura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLPomoc2_Temperatura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -274,7 +293,7 @@ public class Przelicznik_jednostek extends javax.swing.JFrame {
                                 .addComponent(jLPomoc3_Temperatura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPStrona1Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLZapisano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLZapisano1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(116, 116, 116))))
                     .addGroup(jPStrona1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -286,7 +305,7 @@ public class Przelicznik_jednostek extends javax.swing.JFrame {
                 .addGroup(jPStrona1Layout.createSequentialGroup()
                     .addGap(111, 111, 111)
                     .addComponent(jTFKelwiny_Temperatura, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(185, Short.MAX_VALUE)))
+                    .addContainerGap(189, Short.MAX_VALUE)))
         );
 
         jTBTresc.addTab("Temperatura", jPStrona1);
@@ -381,6 +400,12 @@ public class Przelicznik_jednostek extends javax.swing.JFrame {
         jLPomoc4_Odleglosc.setForeground(java.awt.Color.white);
         jLPomoc4_Odleglosc.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
+        jLZapisano2.setFont(new java.awt.Font("sansserif", 0, 10)); // NOI18N
+        jLZapisano2.setForeground(java.awt.Color.green);
+        jLZapisano2.setMaximumSize(new java.awt.Dimension(60, 17));
+        jLZapisano2.setMinimumSize(new java.awt.Dimension(60, 17));
+        jLZapisano2.setPreferredSize(new java.awt.Dimension(60, 17));
+
         javax.swing.GroupLayout jPStrona2Layout = new javax.swing.GroupLayout(jPStrona2);
         jPStrona2.setLayout(jPStrona2Layout);
         jPStrona2Layout.setHorizontalGroup(
@@ -395,7 +420,9 @@ public class Przelicznik_jednostek extends javax.swing.JFrame {
                     .addGroup(jPStrona2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jTFMetry_Odleglosc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jTFCentymetry_Odleglosc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(139, 139, 139))
+                .addGap(47, 47, 47)
+                .addComponent(jLZapisano2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47))
             .addGroup(jPStrona2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPStrona2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -423,16 +450,22 @@ public class Przelicznik_jednostek extends javax.swing.JFrame {
                         .addComponent(jTFCentymetry_Odleglosc, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTFMetry_Odleglosc, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
                         .addGroup(jPStrona2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jBPrzelicz_Odleglosc, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jBReset_Odleglosc, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
-                        .addComponent(jLPomoc3_Odleglosc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLPomoc2_Odleglosc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLPomoc1_Odleglosc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPStrona2Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(jPStrona2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jBPrzelicz_Odleglosc, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jBReset_Odleglosc, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLPomoc3_Odleglosc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLPomoc2_Odleglosc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLPomoc1_Odleglosc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPStrona2Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLZapisano2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(114, 114, 114))))
                     .addGroup(jPStrona2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLPomoc4_Odleglosc, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -465,6 +498,11 @@ public class Przelicznik_jednostek extends javax.swing.JFrame {
         jMPlik.setForeground(java.awt.Color.pink);
         jMPlik.setText("Plik");
         jMPlik.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jMPlik.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMPlikActionPerformed(evt);
+            }
+        });
 
         jMIPokazHistorie.setBackground(java.awt.Color.darkGray);
         jMIPokazHistorie.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
@@ -500,6 +538,16 @@ public class Przelicznik_jednostek extends javax.swing.JFrame {
         jMOProgramie.setText("O programie");
         jMOProgramie.setFocusable(false);
         jMOProgramie.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jMOProgramie.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMOProgramieMouseClicked(evt);
+            }
+        });
+        jMOProgramie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMOProgramieActionPerformed(evt);
+            }
+        });
         jMBMenu.add(jMOProgramie);
 
         setJMenuBar(jMBMenu);
@@ -528,7 +576,7 @@ public class Przelicznik_jednostek extends javax.swing.JFrame {
     }//GEN-LAST:event_jMIZamknijActionPerformed
 
     private void jMIPokazHistorieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIPokazHistorieActionPerformed
-       jOPHistoria.showMessageDialog(null, "Odleglosci: ");
+        jOPHistoria.showMessageDialog(null, "Odleglosci:       " + "Temperatura: ");
     }//GEN-LAST:event_jMIPokazHistorieActionPerformed
 
     private void jBPrzelicz_TemperaturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBPrzelicz_TemperaturaActionPerformed
@@ -557,7 +605,7 @@ public class Przelicznik_jednostek extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(Przelicznik_jednostek.class.getName()).log(Level.SEVERE, null, ex);
         }
-        jLZapisano.setText("Zapisano.");
+        jLZapisano1.setText("Zapisano.");
     }//GEN-LAST:event_jBPrzelicz_TemperaturaActionPerformed
 
     private void jBReset_TemperaturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBReset_TemperaturaActionPerformed
@@ -603,6 +651,16 @@ public class Przelicznik_jednostek extends javax.swing.JFrame {
             double metry_value = Math.abs(centymetry_value) / 100;
             jTFMetry_Odleglosc.setText(""+metry_value);
         }
+        
+        try {
+            FileWriter writer = new FileWriter("odleglosc.txt", true);
+            writer.write(centymetry);
+            writer.write(metry);
+            writer.close();
+        } catch (IOException ex) {
+            Logger.getLogger(Przelicznik_jednostek.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        jLZapisano2.setText("Zapisano.");
     }//GEN-LAST:event_jBPrzelicz_OdlegloscActionPerformed
 
     private void jBPomoc_OdlegloscActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBPomoc_OdlegloscActionPerformed
@@ -628,6 +686,18 @@ public class Przelicznik_jednostek extends javax.swing.JFrame {
     private void jOPHistoriaAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jOPHistoriaAncestorAdded
 
     }//GEN-LAST:event_jOPHistoriaAncestorAdded
+
+    private void jMPlikActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMPlikActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMPlikActionPerformed
+
+    private void jMOProgramieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMOProgramieActionPerformed
+        
+    }//GEN-LAST:event_jMOProgramieActionPerformed
+
+    private void jMOProgramieMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMOProgramieMouseClicked
+        jOPOprogramie.showMessageDialog(null, "Autor: Antoni Musiał");
+    }//GEN-LAST:event_jMOProgramieMouseClicked
 
     /**
      * @param args the command line arguments
@@ -672,6 +742,7 @@ public class Przelicznik_jednostek extends javax.swing.JFrame {
     private javax.swing.JButton jBReset_Odleglosc;
     private javax.swing.JButton jBReset_Temperatura;
     private javax.swing.JDialog jDHistoria;
+    private javax.swing.JDialog jDOprogramie;
     private javax.swing.JDialog jDPomoc;
     private javax.swing.JLabel jLPomoc1_Odleglosc;
     private javax.swing.JLabel jLPomoc1_Temperatura;
@@ -683,13 +754,15 @@ public class Przelicznik_jednostek extends javax.swing.JFrame {
     private javax.swing.JLabel jLPomoc4_Temperatura;
     private javax.swing.JLabel jLTytulOdleglosc;
     private javax.swing.JLabel jLTytulTemperatura;
-    private javax.swing.JLabel jLZapisano;
+    private javax.swing.JLabel jLZapisano1;
+    private javax.swing.JLabel jLZapisano2;
     private javax.swing.JMenuBar jMBMenu;
     private javax.swing.JMenuItem jMIPokazHistorie;
     private javax.swing.JMenuItem jMIZamknij;
     private javax.swing.JMenu jMOProgramie;
     private javax.swing.JMenu jMPlik;
     private javax.swing.JOptionPane jOPHistoria;
+    private javax.swing.JOptionPane jOPOprogramie;
     private javax.swing.JOptionPane jOptionPane1;
     private javax.swing.JPanel jPStrona1;
     private javax.swing.JPanel jPStrona2;
