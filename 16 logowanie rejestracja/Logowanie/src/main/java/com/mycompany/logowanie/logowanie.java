@@ -34,28 +34,44 @@ public class logowanie extends javax.swing.JFrame {
         jTFPassword = new javax.swing.JTextField();
         jTFConfirmpassword = new javax.swing.JTextField();
         jBRejestracja = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(500, 350));
+        setTitle("Logowanie");
+        setMaximumSize(new java.awt.Dimension(32767, 32767));
         setPreferredSize(new java.awt.Dimension(500, 350));
+        setResizable(false);
         setSize(new java.awt.Dimension(500, 350));
 
-        jPAll.setMaximumSize(new java.awt.Dimension(500, 350));
+        jTBAll.setPreferredSize(new java.awt.Dimension(500, 350));
 
         jTFUsername.setBorder(javax.swing.BorderFactory.createTitledBorder("Username"));
+        jTFUsername.setMaximumSize(new java.awt.Dimension(488, 41));
+        jTFUsername.setPreferredSize(new java.awt.Dimension(488, 41));
 
         jTFEmail.setBorder(javax.swing.BorderFactory.createTitledBorder("Email"));
+        jTFEmail.setMaximumSize(new java.awt.Dimension(488, 41));
+        jTFEmail.setPreferredSize(new java.awt.Dimension(488, 41));
 
         jTFPassword.setBorder(javax.swing.BorderFactory.createTitledBorder("Password"));
+        jTFPassword.setMaximumSize(new java.awt.Dimension(488, 41));
+        jTFPassword.setPreferredSize(new java.awt.Dimension(488, 41));
 
         jTFConfirmpassword.setBorder(javax.swing.BorderFactory.createTitledBorder("Confirm Password"));
+        jTFConfirmpassword.setMaximumSize(new java.awt.Dimension(488, 41));
+        jTFConfirmpassword.setPreferredSize(new java.awt.Dimension(488, 41));
 
         jBRejestracja.setText("Zarejestruj");
         jBRejestracja.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+        jBRejestracja.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBRejestracjaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPResestracjaLayout = new javax.swing.GroupLayout(jPResestracja);
         jPResestracja.setLayout(jPResestracjaLayout);
@@ -64,14 +80,18 @@ public class logowanie extends javax.swing.JFrame {
             .addGroup(jPResestracjaLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPResestracjaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTFUsername)
-                    .addComponent(jTFEmail)
-                    .addComponent(jTFPassword)
-                    .addComponent(jTFConfirmpassword)
+                    .addComponent(jTFUsername, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jTFEmail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jTFPassword, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jTFConfirmpassword, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPResestracjaLayout.createSequentialGroup()
                         .addComponent(jBRejestracja, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 388, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPResestracjaLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(112, 112, 112))
         );
         jPResestracjaLayout.setVerticalGroup(
             jPResestracjaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -86,14 +106,20 @@ public class logowanie extends javax.swing.JFrame {
                 .addComponent(jTFConfirmpassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jBRejestracja, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         jTBAll.addTab("Rejestracja", jPResestracja);
 
         jTextField1.setBorder(javax.swing.BorderFactory.createTitledBorder("Email"));
+        jTextField1.setMaximumSize(new java.awt.Dimension(488, 41));
+        jTextField1.setPreferredSize(new java.awt.Dimension(488, 41));
 
         jTextField2.setBorder(javax.swing.BorderFactory.createTitledBorder("Password"));
+        jTextField2.setMaximumSize(new java.awt.Dimension(488, 41));
+        jTextField2.setPreferredSize(new java.awt.Dimension(488, 41));
 
         jButton1.setText("Zaloguj");
         jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
@@ -106,11 +132,11 @@ public class logowanie extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField1)
-                    .addComponent(jTextField2)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 402, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -122,7 +148,7 @@ public class logowanie extends javax.swing.JFrame {
                 .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(179, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTBAll.addTab("Logowanie", jPanel3);
@@ -131,11 +157,11 @@ public class logowanie extends javax.swing.JFrame {
         jPAll.setLayout(jPAllLayout);
         jPAllLayout.setHorizontalGroup(
             jPAllLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTBAll)
+            .addComponent(jTBAll, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPAllLayout.setVerticalGroup(
             jPAllLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTBAll)
+            .addComponent(jTBAll, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jTBAll.getAccessibleContext().setAccessibleName("Rejestracja/logowanie");
@@ -148,13 +174,22 @@ public class logowanie extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPAll, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPAll, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jBRejestracjaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBRejestracjaActionPerformed
+        String username = jTFUsername.getText();
+        int usernamelength = username.length();
+        if (usernamelength > 2 && usernamelength < 20) {
+            jLabel1.setText('Dobrze');
+        } else {
+            jLabel1.setText('Źle');
+        }
+    }//GEN-LAST:event_jBRejestracjaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -194,6 +229,7 @@ public class logowanie extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBRejestracja;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPAll;
     private javax.swing.JPanel jPResestracja;
     private javax.swing.JPanel jPanel3;
