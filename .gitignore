@@ -32,3 +32,4 @@ dist/
 nbdist/
 .nb-gradle/
 
+/kolko_i_krzyzyk/target/
