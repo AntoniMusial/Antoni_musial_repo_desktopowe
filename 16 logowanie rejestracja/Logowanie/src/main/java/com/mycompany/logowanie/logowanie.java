@@ -43,7 +43,6 @@ public class logowanie extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Logowanie");
         setMaximumSize(new java.awt.Dimension(32767, 32767));
-        setPreferredSize(new java.awt.Dimension(500, 350));
         setResizable(false);
         setSize(new java.awt.Dimension(500, 350));
 

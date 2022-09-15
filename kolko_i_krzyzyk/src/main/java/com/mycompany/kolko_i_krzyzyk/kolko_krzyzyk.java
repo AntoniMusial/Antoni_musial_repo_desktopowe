@@ -30,16 +30,16 @@ public class kolko_krzyzyk extends javax.swing.JFrame {
         jPContainerRight = new javax.swing.JPanel();
         jLKolkoikrzyzyk = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jLKolko = new javax.swing.JLabel();
-        jLKrzyzyk = new javax.swing.JLabel();
+        jLKolko1 = new javax.swing.JLabel();
+        jLKrzyzyk1 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
         jBRozpocznij = new javax.swing.JButton();
         jBZakoncz = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        jLTwojruch1 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        jLKolko2 = new javax.swing.JLabel();
+        jLKrzyzyk2 = new javax.swing.JLabel();
+        jLTwojruch2 = new javax.swing.JLabel();
         jPContainerLeft = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -57,14 +57,14 @@ public class kolko_krzyzyk extends javax.swing.JFrame {
         jLKolkoikrzyzyk.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLKolkoikrzyzyk.setText("Kółko i krzyżyk");
 
-        jLKolko.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLKolko.setForeground(java.awt.Color.white);
-        jLKolko.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLKolko.setText("Kółko:");
+        jLKolko1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLKolko1.setForeground(java.awt.Color.white);
+        jLKolko1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLKolko1.setText("Kółko:");
 
-        jLKrzyzyk.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLKrzyzyk.setForeground(java.awt.Color.white);
-        jLKrzyzyk.setText("Krzyżyk:");
+        jLKrzyzyk1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLKrzyzyk1.setForeground(java.awt.Color.white);
+        jLKrzyzyk1.setText("Krzyżyk:");
 
         jBRozpocznij.setBackground(java.awt.Color.darkGray);
         jBRozpocznij.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
@@ -77,20 +77,25 @@ public class kolko_krzyzyk extends javax.swing.JFrame {
         jBZakoncz.setForeground(java.awt.Color.white);
         jBZakoncz.setText("Zakończ");
         jBZakoncz.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.gray));
+        jBZakoncz.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBZakonczActionPerformed(evt);
+            }
+        });
 
-        jLabel1.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
-        jLabel1.setForeground(java.awt.Color.white);
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Twój ruch:");
+        jLTwojruch1.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jLTwojruch1.setForeground(java.awt.Color.white);
+        jLTwojruch1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLTwojruch1.setText("Twój ruch:");
 
-        jLabel2.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        jLabel2.setForeground(java.awt.Color.white);
+        jLKolko2.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        jLKolko2.setForeground(java.awt.Color.white);
 
-        jLabel3.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        jLabel3.setForeground(java.awt.Color.white);
+        jLKrzyzyk2.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        jLKrzyzyk2.setForeground(java.awt.Color.white);
 
-        jLabel4.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        jLabel4.setForeground(java.awt.Color.green);
+        jLTwojruch2.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        jLTwojruch2.setForeground(java.awt.Color.green);
 
         javax.swing.GroupLayout jPContainerRightLayout = new javax.swing.GroupLayout(jPContainerRight);
         jPContainerRight.setLayout(jPContainerRightLayout);
@@ -110,18 +115,18 @@ public class kolko_krzyzyk extends javax.swing.JFrame {
                             .addComponent(jLKolkoikrzyzyk, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jSeparator1)
                             .addGroup(jPContainerRightLayout.createSequentialGroup()
-                                .addComponent(jLKolko)
+                                .addComponent(jLKolko1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(jLKolko2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(jPContainerRightLayout.createSequentialGroup()
-                                .addComponent(jLKrzyzyk)
+                                .addComponent(jLKrzyzyk1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(jLKrzyzyk2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPContainerRightLayout.createSequentialGroup()
-                                .addComponent(jLabel1)
+                                .addComponent(jLTwojruch1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jLTwojruch2, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap())))
         );
         jPContainerRightLayout.setVerticalGroup(
@@ -133,18 +138,18 @@ public class kolko_krzyzyk extends javax.swing.JFrame {
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPContainerRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLKolko, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLKolko1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLKolko2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPContainerRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLKrzyzyk)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLKrzyzyk1)
+                    .addComponent(jLKrzyzyk2, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20)
                 .addGroup(jPContainerRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLTwojruch1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLTwojruch2, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(222, 222, 222)
@@ -197,6 +202,10 @@ public class kolko_krzyzyk extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jBZakonczActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBZakonczActionPerformed
+        
+    }//GEN-LAST:event_jBZakonczActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -235,13 +244,13 @@ public class kolko_krzyzyk extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBRozpocznij;
     private javax.swing.JButton jBZakoncz;
-    private javax.swing.JLabel jLKolko;
+    private javax.swing.JLabel jLKolko1;
+    private javax.swing.JLabel jLKolko2;
     private javax.swing.JLabel jLKolkoikrzyzyk;
-    private javax.swing.JLabel jLKrzyzyk;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLKrzyzyk1;
+    private javax.swing.JLabel jLKrzyzyk2;
+    private javax.swing.JLabel jLTwojruch1;
+    private javax.swing.JLabel jLTwojruch2;
     private javax.swing.JPanel jPContainerAll;
     private javax.swing.JPanel jPContainerLeft;
     private javax.swing.JPanel jPContainerRight;
