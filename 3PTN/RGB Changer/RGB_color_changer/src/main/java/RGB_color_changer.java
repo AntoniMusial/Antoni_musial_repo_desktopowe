@@ -1,3 +1,8 @@
+
+import java.awt.Color;
+import java.awt.event.KeyEvent;
+import javax.swing.JSlider;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -12,6 +17,10 @@ public class RGB_color_changer extends javax.swing.JFrame {
     /**
      * Creates new form RGB_color_changer
      */
+    int r, g, b;
+    
+    String hex = String.format("#%02x%02x%02x", r, g, b);
+    
     public RGB_color_changer() {
         initComponents();
     }
@@ -48,13 +57,20 @@ public class RGB_color_changer extends javax.swing.JFrame {
         jL_BLUE_Properties_from_slider = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
         jL_BLUE_Properties_from_slider_value = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        jP_Color_Changing = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jSeparator4 = new javax.swing.JSeparator();
-        jLabel2 = new javax.swing.JLabel();
+        jTF_Hex = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jP_Everything.setBackground(java.awt.Color.darkGray);
 
@@ -73,6 +89,11 @@ public class RGB_color_changer extends javax.swing.JFrame {
         jS_RED_Slider.setPaintLabels(true);
         jS_RED_Slider.setSnapToTicks(true);
         jS_RED_Slider.setValue(100);
+        jS_RED_Slider.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jS_RED_SliderStateChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout jP_RED_SliderLayout = new javax.swing.GroupLayout(jP_RED_Slider);
         jP_RED_Slider.setLayout(jP_RED_SliderLayout);
@@ -110,6 +131,11 @@ public class RGB_color_changer extends javax.swing.JFrame {
         jS_GREEN_Slider.setPaintLabels(true);
         jS_GREEN_Slider.setSnapToTicks(true);
         jS_GREEN_Slider.setValue(100);
+        jS_GREEN_Slider.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jS_GREEN_SliderStateChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout jP_GREEN_SliderLayout = new javax.swing.GroupLayout(jP_GREEN_Slider);
         jP_GREEN_Slider.setLayout(jP_GREEN_SliderLayout);
@@ -147,6 +173,11 @@ public class RGB_color_changer extends javax.swing.JFrame {
         jS_BLUE_Slider.setPaintLabels(true);
         jS_BLUE_Slider.setSnapToTicks(true);
         jS_BLUE_Slider.setValue(100);
+        jS_BLUE_Slider.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jS_BLUE_SliderStateChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout jP_BLUE_SliderLayout = new javax.swing.GroupLayout(jP_BLUE_Slider);
         jP_BLUE_Slider.setLayout(jP_BLUE_SliderLayout);
@@ -282,17 +313,16 @@ public class RGB_color_changer extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel1.setBackground(java.awt.Color.lightGray);
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jP_Color_Changing.setBackground(java.awt.Color.lightGray);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 88, Short.MAX_VALUE)
+        javax.swing.GroupLayout jP_Color_ChangingLayout = new javax.swing.GroupLayout(jP_Color_Changing);
+        jP_Color_Changing.setLayout(jP_Color_ChangingLayout);
+        jP_Color_ChangingLayout.setHorizontalGroup(
+            jP_Color_ChangingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 98, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jP_Color_ChangingLayout.setVerticalGroup(
+            jP_Color_ChangingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
@@ -304,9 +334,16 @@ public class RGB_color_changer extends javax.swing.JFrame {
 
         jSeparator4.setForeground(java.awt.Color.black);
 
-        jLabel2.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("#ffffff");
+        jTF_Hex.setBackground(java.awt.Color.lightGray);
+        jTF_Hex.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        jTF_Hex.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTF_Hex.setText("#ffffff");
+        jTF_Hex.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.black));
+        jTF_Hex.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTF_HexKeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -317,7 +354,9 @@ public class RGB_color_changer extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jSeparator4)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jTF_Hex, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -327,8 +366,8 @@ public class RGB_color_changer extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addComponent(jTF_Hex, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -344,8 +383,8 @@ public class RGB_color_changer extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jP_BLUE_Properties_from_slider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(77, 77, 77)
+                .addComponent(jP_Color_Changing, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(67, 67, 67)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -354,7 +393,7 @@ public class RGB_color_changer extends javax.swing.JFrame {
             .addGroup(jP_Properties_from_slidersLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jP_Properties_from_slidersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jP_Color_Changing, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jP_BLUE_Properties_from_slider, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jP_GREEN_Properties_from_slider, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jP_RED_Properties_from_slider, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -364,21 +403,99 @@ public class RGB_color_changer extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jButton1.setBackground(java.awt.Color.darkGray);
+        jButton1.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        jButton1.setForeground(java.awt.Color.white);
+        jButton1.setText("Koralowy");
+        jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.white));
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+
+        jButton2.setBackground(java.awt.Color.darkGray);
+        jButton2.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        jButton2.setForeground(java.awt.Color.white);
+        jButton2.setText("Łososiowy");
+        jButton2.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.white));
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
+
+        jButton3.setBackground(java.awt.Color.darkGray);
+        jButton3.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        jButton3.setForeground(java.awt.Color.white);
+        jButton3.setText("Cyan");
+        jButton3.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.white));
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
+
+        jButton4.setBackground(java.awt.Color.darkGray);
+        jButton4.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        jButton4.setForeground(java.awt.Color.white);
+        jButton4.setText("Beżowy");
+        jButton4.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.white));
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
+        });
+
+        jButton5.setBackground(java.awt.Color.darkGray);
+        jButton5.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        jButton5.setForeground(java.awt.Color.white);
+        jButton5.setText("Miedziany");
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
+
+        jButton6.setBackground(java.awt.Color.darkGray);
+        jButton6.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        jButton6.setForeground(java.awt.Color.white);
+        jButton6.setText("Gumiguta");
+        jButton6.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.white));
+        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton6MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jP_EverythingLayout = new javax.swing.GroupLayout(jP_Everything);
         jP_Everything.setLayout(jP_EverythingLayout);
         jP_EverythingLayout.setHorizontalGroup(
             jP_EverythingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jP_EverythingLayout.createSequentialGroup()
+            .addGroup(jP_EverythingLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jP_EverythingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jP_BLUE_Slider, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jP_GREEN_Slider, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jP_RED_Slider, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jP_EverythingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jP_BLUE_Slider, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jP_GREEN_Slider, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jP_RED_Slider, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jP_EverythingLayout.createSequentialGroup()
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                        .addGroup(jP_EverythingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jP_EverythingLayout.createSequentialGroup()
+                                .addComponent(jP_Properties_from_sliders, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(91, 91, 91))
+                            .addGroup(jP_EverythingLayout.createSequentialGroup()
+                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(84, 84, 84)
+                                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jP_EverythingLayout.createSequentialGroup()
-                .addContainerGap(132, Short.MAX_VALUE)
-                .addComponent(jP_Properties_from_sliders, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(97, 97, 97))
         );
         jP_EverythingLayout.setVerticalGroup(
             jP_EverythingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -391,7 +508,16 @@ public class RGB_color_changer extends javax.swing.JFrame {
                 .addComponent(jP_BLUE_Slider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jP_Properties_from_sliders, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(93, Short.MAX_VALUE))
+                .addGap(56, 56, 56)
+                .addGroup(jP_EverythingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jP_EverythingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -407,6 +533,113 @@ public class RGB_color_changer extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jS_RED_SliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jS_RED_SliderStateChanged
+        // TODO add your handling code here:
+        r = jS_RED_Slider.getValue();
+        jP_Color_Changing.setBackground(new Color(r, g, b));
+        jL_RED_Properties_from_slider_value.setText("" + r);
+        String hex = String.format("#%02x%02x%02x", r, g, b);
+        jTF_Hex.setText("" + hex);
+    }//GEN-LAST:event_jS_RED_SliderStateChanged
+
+    private void jS_GREEN_SliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jS_GREEN_SliderStateChanged
+        // TODO add your handling code here:
+        g = jS_GREEN_Slider.getValue();
+        jP_Color_Changing.setBackground(new Color(r, g, b));
+        jL_GREEN_Properties_from_slider_value.setText("" + g);
+        String hex = String.format("#%02x%02x%02x", r, g, b);
+        jTF_Hex.setText("" + hex);
+    }//GEN-LAST:event_jS_GREEN_SliderStateChanged
+
+    private void jS_BLUE_SliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jS_BLUE_SliderStateChanged
+        // TODO add your handling code here:
+        b = jS_BLUE_Slider.getValue();
+        jP_Color_Changing.setBackground(new Color(r, g, b));
+        jL_BLUE_Properties_from_slider_value.setText("" + b);
+        String hex = String.format("#%02x%02x%02x", r, g, b);
+        jTF_Hex.setText("" + hex);
+    }//GEN-LAST:event_jS_BLUE_SliderStateChanged
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        // TODO add your handling code here:
+        jP_Color_Changing.setBackground(new Color(255, 127, 80));
+        jL_RED_Properties_from_slider_value.setText("255");
+        jL_GREEN_Properties_from_slider_value.setText("127");
+        jL_BLUE_Properties_from_slider_value.setText("80");
+        jTF_Hex.setText("#FA8072");
+        jS_RED_Slider.setValue(255);
+        jS_GREEN_Slider.setValue(127);
+        jS_BLUE_Slider.setValue(80);
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        // TODO add your handling code here:
+        jP_Color_Changing.setBackground(new Color(255, 128, 114));
+        jL_RED_Properties_from_slider_value.setText("255");
+        jL_GREEN_Properties_from_slider_value.setText("128");
+        jL_BLUE_Properties_from_slider_value.setText("114");
+        jTF_Hex.setText("#FF7F50");
+        jS_RED_Slider.setValue(255);
+        jS_GREEN_Slider.setValue(128);
+        jS_BLUE_Slider.setValue(114);
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        // TODO add your handling code here:
+        jP_Color_Changing.setBackground(new Color(224, 255, 255));
+        jL_RED_Properties_from_slider_value.setText("224");
+        jL_GREEN_Properties_from_slider_value.setText("255");
+        jL_BLUE_Properties_from_slider_value.setText("255");
+        jTF_Hex.setText("#E0FFFF");
+        jS_RED_Slider.setValue(224);
+        jS_GREEN_Slider.setValue(255);
+        jS_BLUE_Slider.setValue(255);
+    }//GEN-LAST:event_jButton3MouseClicked
+
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+        // TODO add your handling code here:
+        jP_Color_Changing.setBackground(new Color(217, 186, 140));
+        jL_RED_Properties_from_slider_value.setText("217");
+        jL_GREEN_Properties_from_slider_value.setText("186");
+        jL_BLUE_Properties_from_slider_value.setText("140");
+        jTF_Hex.setText("#D9BA8C");
+        jS_RED_Slider.setValue(217);
+        jS_GREEN_Slider.setValue(186);
+        jS_BLUE_Slider.setValue(140);
+    }//GEN-LAST:event_jButton4MouseClicked
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        // TODO add your handling code here:
+        jP_Color_Changing.setBackground(new Color(133, 56, 43));
+        jL_RED_Properties_from_slider_value.setText("133");
+        jL_GREEN_Properties_from_slider_value.setText("56");
+        jL_BLUE_Properties_from_slider_value.setText("43");
+        jTF_Hex.setText("#85382B");
+        jS_RED_Slider.setValue(133);
+        jS_GREEN_Slider.setValue(56);
+        jS_BLUE_Slider.setValue(43);
+    }//GEN-LAST:event_jButton5MouseClicked
+
+    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
+        // TODO add your handling code here:
+        jP_Color_Changing.setBackground(new Color(228, 155, 15));
+        jL_RED_Properties_from_slider_value.setText("228");
+        jL_GREEN_Properties_from_slider_value.setText("155");
+        jL_BLUE_Properties_from_slider_value.setText("15");
+        jTF_Hex.setText("#E49B0F");
+        jS_RED_Slider.setValue(228);
+        jS_GREEN_Slider.setValue(155);
+        jS_BLUE_Slider.setValue(15);
+    }//GEN-LAST:event_jButton6MouseClicked
+
+    private void jTF_HexKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTF_HexKeyPressed
+        // TODO add your handling code here:
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            String Hex_text = jTF_Hex.getText();
+            jP_Color_Changing.setCardBackgroundColor(Color.parseColor(Hex_text));
+        }
+    }//GEN-LAST:event_jTF_HexKeyPressed
 
     /**
      * @param args the command line arguments
@@ -444,6 +677,12 @@ public class RGB_color_changer extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jL_BLUE_Properties_from_slider;
     private javax.swing.JLabel jL_BLUE_Properties_from_slider_value;
     private javax.swing.JLabel jL_BLUE_Slider;
@@ -454,16 +693,15 @@ public class RGB_color_changer extends javax.swing.JFrame {
     private javax.swing.JLabel jL_RED_Properties_from_slider_value;
     private javax.swing.JLabel jL_RED_Slider;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jP_BLUE_Properties_from_slider;
     private javax.swing.JPanel jP_BLUE_Slider;
+    private javax.swing.JPanel jP_Color_Changing;
     private javax.swing.JPanel jP_Everything;
     private javax.swing.JPanel jP_GREEN_Properties_from_slider;
     private javax.swing.JPanel jP_GREEN_Slider;
     private javax.swing.JPanel jP_Properties_from_sliders;
     private javax.swing.JPanel jP_RED_Properties_from_slider;
     private javax.swing.JPanel jP_RED_Slider;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSlider jS_BLUE_Slider;
     private javax.swing.JSlider jS_GREEN_Slider;
@@ -472,5 +710,6 @@ public class RGB_color_changer extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JTextField jTF_Hex;
     // End of variables declaration//GEN-END:variables
 }
