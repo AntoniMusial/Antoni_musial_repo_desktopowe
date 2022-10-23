@@ -4,12 +4,23 @@
  */
 package com.mycompany.kodowanie_dekodowanie;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author musialantoni
  */
 public class Kodowanie_dekodowanie extends javax.swing.JFrame {
 
+    File file = new File("tajne.txt");
     /**
      * Creates new form Kodowanie_dekodowanie
      */
@@ -26,178 +37,472 @@ public class Kodowanie_dekodowanie extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPZakoduj = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jSeparator1 = new javax.swing.JSeparator();
-        jSP1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jPOdkoduj = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
+        jP_All = new javax.swing.JPanel();
+        jTB1 = new javax.swing.JTabbedPane();
+        jP_Kodowanie = new javax.swing.JPanel();
+        jP_Kodowanie_Buttons = new javax.swing.JPanel();
+        jB_Kodowanie_Buttons_Zakoduj = new javax.swing.JButton();
+        jB_Kodowanie_Buttons_Wczytaj = new javax.swing.JButton();
+        jB_Kodowanie_Buttons_Wyczyść1 = new javax.swing.JButton();
+        jP_Kodowanie_Zakodowanytekst = new javax.swing.JPanel();
+        jL_Kodowanie_Zakodowanytekst_Text = new javax.swing.JLabel();
+        jSP_Kodowanie_Tekst_Do_Zakodowania = new javax.swing.JScrollPane();
+        jTA_Kodowanie_Tekst_Do_Zakodowania_Text = new javax.swing.JTextArea();
+        jSP_Kodowanie_Zakodowany_Tekst = new javax.swing.JScrollPane();
+        jTA_Kodowanie_Zakodowany_Tekst_Text = new javax.swing.JTextArea();
+        jP_Dekodowanie = new javax.swing.JPanel();
+        jP_Dekodowanie_Buttons = new javax.swing.JPanel();
+        jB_Dekodowanie_Buttons_Odkoduj = new javax.swing.JButton();
+        jB_Dekodowanie_Buttons_Wczytaj = new javax.swing.JButton();
+        jB_Dekodowanie_Buttons_Wyczysc2 = new javax.swing.JButton();
+        jP_Dekodowanie_Odkodowanytekst = new javax.swing.JPanel();
+        jL_Dekodowanie_Odkodowanytekst_Text = new javax.swing.JLabel();
+        jSP_Dekodowanie_Tekst_Do_Odkodowania = new javax.swing.JScrollPane();
+        jTA_Dekodowanie_Tekst_Do_Odkodowania_Text = new javax.swing.JTextArea();
+        jSP_Dekodowanie_Odkodowany_Tekst = new javax.swing.JScrollPane();
+        jTA_Dekodowanie_Odkodowany_Tekst_Text = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Kodowanie i Dekodowanie");
+        setResizable(false);
 
-        jPanel1.setBackground(java.awt.Color.darkGray);
+        jP_All.setBackground(java.awt.Color.darkGray);
 
-        jPanel2.setBackground(java.awt.Color.gray);
+        jTB1.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
 
-        jTabbedPane1.setBackground(java.awt.Color.lightGray);
+        jP_Kodowanie.setBackground(java.awt.Color.darkGray);
+        jP_Kodowanie.setForeground(java.awt.Color.white);
+        jP_Kodowanie.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
-        jPZakoduj.setBackground(java.awt.Color.lightGray);
+        jP_Kodowanie_Buttons.setBackground(java.awt.Color.darkGray);
+        jP_Kodowanie_Buttons.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.gray));
 
-        jButton1.setBackground(java.awt.Color.lightGray);
-        jButton1.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
-        jButton1.setText("Zakoduj");
-        jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jB_Kodowanie_Buttons_Zakoduj.setBackground(java.awt.Color.darkGray);
+        jB_Kodowanie_Buttons_Zakoduj.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jB_Kodowanie_Buttons_Zakoduj.setForeground(java.awt.Color.white);
+        jB_Kodowanie_Buttons_Zakoduj.setText("Zakoduj");
+        jB_Kodowanie_Buttons_Zakoduj.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.gray));
+        jB_Kodowanie_Buttons_Zakoduj.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jB_Kodowanie_Buttons_Zakoduj.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jB_Kodowanie_Buttons_ZakodujActionPerformed(evt);
             }
         });
 
-        jButton2.setBackground(java.awt.Color.lightGray);
-        jButton2.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
-        jButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jButton2.setLabel("Wyczyść");
+        jB_Kodowanie_Buttons_Wczytaj.setBackground(java.awt.Color.darkGray);
+        jB_Kodowanie_Buttons_Wczytaj.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jB_Kodowanie_Buttons_Wczytaj.setForeground(java.awt.Color.white);
+        jB_Kodowanie_Buttons_Wczytaj.setText("Zapisz");
+        jB_Kodowanie_Buttons_Wczytaj.setToolTipText("");
+        jB_Kodowanie_Buttons_Wczytaj.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.gray));
+        jB_Kodowanie_Buttons_Wczytaj.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_Kodowanie_Buttons_WczytajActionPerformed(evt);
+            }
+        });
 
-        jButton3.setBackground(java.awt.Color.lightGray);
-        jButton3.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
-        jButton3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jButton3.setLabel("Wczytaj");
+        jB_Kodowanie_Buttons_Wyczyść1.setBackground(java.awt.Color.darkGray);
+        jB_Kodowanie_Buttons_Wyczyść1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jB_Kodowanie_Buttons_Wyczyść1.setForeground(java.awt.Color.white);
+        jB_Kodowanie_Buttons_Wyczyść1.setText("Wyczyść");
+        jB_Kodowanie_Buttons_Wyczyść1.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.gray));
+        jB_Kodowanie_Buttons_Wyczyść1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_Kodowanie_Buttons_Wyczyść1ActionPerformed(evt);
+            }
+        });
 
-        jSeparator1.setForeground(java.awt.Color.black);
-
-        jSP1.setBackground(java.awt.Color.lightGray);
-        jSP1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jSP1.setForeground(java.awt.Color.white);
-        jSP1.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
-
-        jTextArea1.setBackground(java.awt.Color.lightGray);
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jSP1.setViewportView(jTextArea1);
-
-        javax.swing.GroupLayout jPZakodujLayout = new javax.swing.GroupLayout(jPZakoduj);
-        jPZakoduj.setLayout(jPZakodujLayout);
-        jPZakodujLayout.setHorizontalGroup(
-            jPZakodujLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPZakodujLayout.createSequentialGroup()
+        javax.swing.GroupLayout jP_Kodowanie_ButtonsLayout = new javax.swing.GroupLayout(jP_Kodowanie_Buttons);
+        jP_Kodowanie_Buttons.setLayout(jP_Kodowanie_ButtonsLayout);
+        jP_Kodowanie_ButtonsLayout.setHorizontalGroup(
+            jP_Kodowanie_ButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jP_Kodowanie_ButtonsLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPZakodujLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSP1)
-                    .addComponent(jSeparator1)
-                    .addGroup(jPZakodujLayout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(33, 33, 33)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(jB_Kodowanie_Buttons_Zakoduj, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addComponent(jB_Kodowanie_Buttons_Wyczyść1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
+                .addComponent(jB_Kodowanie_Buttons_Wczytaj, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
-        jPZakodujLayout.setVerticalGroup(
-            jPZakodujLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPZakodujLayout.createSequentialGroup()
+        jP_Kodowanie_ButtonsLayout.setVerticalGroup(
+            jP_Kodowanie_ButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jP_Kodowanie_ButtonsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jP_Kodowanie_ButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jB_Kodowanie_Buttons_Zakoduj, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jB_Kodowanie_Buttons_Wczytaj, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jB_Kodowanie_Buttons_Wyczyść1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        jP_Kodowanie_Zakodowanytekst.setBackground(java.awt.Color.darkGray);
+        jP_Kodowanie_Zakodowanytekst.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.gray));
+
+        jL_Kodowanie_Zakodowanytekst_Text.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jL_Kodowanie_Zakodowanytekst_Text.setForeground(java.awt.Color.white);
+        jL_Kodowanie_Zakodowanytekst_Text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jL_Kodowanie_Zakodowanytekst_Text.setText("Zakodowany tekst");
+
+        javax.swing.GroupLayout jP_Kodowanie_ZakodowanytekstLayout = new javax.swing.GroupLayout(jP_Kodowanie_Zakodowanytekst);
+        jP_Kodowanie_Zakodowanytekst.setLayout(jP_Kodowanie_ZakodowanytekstLayout);
+        jP_Kodowanie_ZakodowanytekstLayout.setHorizontalGroup(
+            jP_Kodowanie_ZakodowanytekstLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jP_Kodowanie_ZakodowanytekstLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jL_Kodowanie_Zakodowanytekst_Text, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jP_Kodowanie_ZakodowanytekstLayout.setVerticalGroup(
+            jP_Kodowanie_ZakodowanytekstLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jP_Kodowanie_ZakodowanytekstLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jL_Kodowanie_Zakodowanytekst_Text, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jSP_Kodowanie_Tekst_Do_Zakodowania.setBackground(java.awt.Color.darkGray);
+        jSP_Kodowanie_Tekst_Do_Zakodowania.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.gray));
+
+        jTA_Kodowanie_Tekst_Do_Zakodowania_Text.setBackground(java.awt.Color.darkGray);
+        jTA_Kodowanie_Tekst_Do_Zakodowania_Text.setColumns(20);
+        jTA_Kodowanie_Tekst_Do_Zakodowania_Text.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jTA_Kodowanie_Tekst_Do_Zakodowania_Text.setForeground(java.awt.Color.white);
+        jTA_Kodowanie_Tekst_Do_Zakodowania_Text.setRows(5);
+        jTA_Kodowanie_Tekst_Do_Zakodowania_Text.setMargin(new java.awt.Insets(7, 7, 7, 7));
+        jSP_Kodowanie_Tekst_Do_Zakodowania.setViewportView(jTA_Kodowanie_Tekst_Do_Zakodowania_Text);
+
+        jSP_Kodowanie_Zakodowany_Tekst.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.gray));
+
+        jTA_Kodowanie_Zakodowany_Tekst_Text.setEditable(false);
+        jTA_Kodowanie_Zakodowany_Tekst_Text.setBackground(java.awt.Color.darkGray);
+        jTA_Kodowanie_Zakodowany_Tekst_Text.setColumns(20);
+        jTA_Kodowanie_Zakodowany_Tekst_Text.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jTA_Kodowanie_Zakodowany_Tekst_Text.setForeground(java.awt.Color.white);
+        jTA_Kodowanie_Zakodowany_Tekst_Text.setRows(5);
+        jTA_Kodowanie_Zakodowany_Tekst_Text.setMargin(new java.awt.Insets(7, 7, 7, 7));
+        jSP_Kodowanie_Zakodowany_Tekst.setViewportView(jTA_Kodowanie_Zakodowany_Tekst_Text);
+
+        javax.swing.GroupLayout jP_KodowanieLayout = new javax.swing.GroupLayout(jP_Kodowanie);
+        jP_Kodowanie.setLayout(jP_KodowanieLayout);
+        jP_KodowanieLayout.setHorizontalGroup(
+            jP_KodowanieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jP_KodowanieLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jP_KodowanieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jSP_Kodowanie_Tekst_Do_Zakodowania)
+                    .addComponent(jP_Kodowanie_Buttons, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                .addGroup(jP_KodowanieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jP_Kodowanie_Zakodowanytekst, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jSP_Kodowanie_Zakodowany_Tekst, javax.swing.GroupLayout.DEFAULT_SIZE, 372, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        jP_KodowanieLayout.setVerticalGroup(
+            jP_KodowanieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jP_KodowanieLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jP_KodowanieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jP_Kodowanie_Zakodowanytekst, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jP_Kodowanie_Buttons, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addGroup(jPZakodujLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jP_KodowanieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSP_Kodowanie_Tekst_Do_Zakodowania, javax.swing.GroupLayout.DEFAULT_SIZE, 306, Short.MAX_VALUE)
+                    .addComponent(jSP_Kodowanie_Zakodowany_Tekst))
+                .addContainerGap())
+        );
+
+        jTB1.addTab("Kodowanie", jP_Kodowanie);
+
+        jP_Dekodowanie.setBackground(java.awt.Color.darkGray);
+        jP_Dekodowanie.setForeground(java.awt.Color.white);
+        jP_Dekodowanie.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+
+        jP_Dekodowanie_Buttons.setBackground(java.awt.Color.darkGray);
+        jP_Dekodowanie_Buttons.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.gray));
+
+        jB_Dekodowanie_Buttons_Odkoduj.setBackground(java.awt.Color.darkGray);
+        jB_Dekodowanie_Buttons_Odkoduj.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jB_Dekodowanie_Buttons_Odkoduj.setForeground(java.awt.Color.white);
+        jB_Dekodowanie_Buttons_Odkoduj.setText("Odkoduj");
+        jB_Dekodowanie_Buttons_Odkoduj.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.gray));
+
+        jB_Dekodowanie_Buttons_Wczytaj.setBackground(java.awt.Color.darkGray);
+        jB_Dekodowanie_Buttons_Wczytaj.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jB_Dekodowanie_Buttons_Wczytaj.setForeground(java.awt.Color.white);
+        jB_Dekodowanie_Buttons_Wczytaj.setText("Wczytaj");
+        jB_Dekodowanie_Buttons_Wczytaj.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.gray));
+
+        jB_Dekodowanie_Buttons_Wyczysc2.setBackground(java.awt.Color.darkGray);
+        jB_Dekodowanie_Buttons_Wyczysc2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jB_Dekodowanie_Buttons_Wyczysc2.setForeground(java.awt.Color.white);
+        jB_Dekodowanie_Buttons_Wyczysc2.setText("Wyczyść");
+        jB_Dekodowanie_Buttons_Wyczysc2.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.gray));
+        jB_Dekodowanie_Buttons_Wyczysc2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_Dekodowanie_Buttons_Wyczysc2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jP_Dekodowanie_ButtonsLayout = new javax.swing.GroupLayout(jP_Dekodowanie_Buttons);
+        jP_Dekodowanie_Buttons.setLayout(jP_Dekodowanie_ButtonsLayout);
+        jP_Dekodowanie_ButtonsLayout.setHorizontalGroup(
+            jP_Dekodowanie_ButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jP_Dekodowanie_ButtonsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jB_Dekodowanie_Buttons_Odkoduj, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addComponent(jB_Dekodowanie_Buttons_Wyczysc2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
+                .addComponent(jB_Dekodowanie_Buttons_Wczytaj, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        jP_Dekodowanie_ButtonsLayout.setVerticalGroup(
+            jP_Dekodowanie_ButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jP_Dekodowanie_ButtonsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jP_Dekodowanie_ButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jB_Dekodowanie_Buttons_Odkoduj, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jB_Dekodowanie_Buttons_Wczytaj, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jB_Dekodowanie_Buttons_Wyczysc2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        jP_Dekodowanie_Odkodowanytekst.setBackground(java.awt.Color.darkGray);
+        jP_Dekodowanie_Odkodowanytekst.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.gray));
+
+        jL_Dekodowanie_Odkodowanytekst_Text.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jL_Dekodowanie_Odkodowanytekst_Text.setForeground(java.awt.Color.white);
+        jL_Dekodowanie_Odkodowanytekst_Text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jL_Dekodowanie_Odkodowanytekst_Text.setText("Odkodowany tekst");
+
+        javax.swing.GroupLayout jP_Dekodowanie_OdkodowanytekstLayout = new javax.swing.GroupLayout(jP_Dekodowanie_Odkodowanytekst);
+        jP_Dekodowanie_Odkodowanytekst.setLayout(jP_Dekodowanie_OdkodowanytekstLayout);
+        jP_Dekodowanie_OdkodowanytekstLayout.setHorizontalGroup(
+            jP_Dekodowanie_OdkodowanytekstLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jP_Dekodowanie_OdkodowanytekstLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jL_Dekodowanie_Odkodowanytekst_Text, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jP_Dekodowanie_OdkodowanytekstLayout.setVerticalGroup(
+            jP_Dekodowanie_OdkodowanytekstLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jP_Dekodowanie_OdkodowanytekstLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jL_Dekodowanie_Odkodowanytekst_Text, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jSP_Dekodowanie_Tekst_Do_Odkodowania.setBackground(java.awt.Color.darkGray);
+        jSP_Dekodowanie_Tekst_Do_Odkodowania.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.gray));
+
+        jTA_Dekodowanie_Tekst_Do_Odkodowania_Text.setBackground(java.awt.Color.darkGray);
+        jTA_Dekodowanie_Tekst_Do_Odkodowania_Text.setColumns(20);
+        jTA_Dekodowanie_Tekst_Do_Odkodowania_Text.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jTA_Dekodowanie_Tekst_Do_Odkodowania_Text.setForeground(java.awt.Color.white);
+        jTA_Dekodowanie_Tekst_Do_Odkodowania_Text.setRows(5);
+        jTA_Dekodowanie_Tekst_Do_Odkodowania_Text.setMargin(new java.awt.Insets(7, 7, 7, 7));
+        jSP_Dekodowanie_Tekst_Do_Odkodowania.setViewportView(jTA_Dekodowanie_Tekst_Do_Odkodowania_Text);
+
+        jSP_Dekodowanie_Odkodowany_Tekst.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.gray));
+
+        jTA_Dekodowanie_Odkodowany_Tekst_Text.setEditable(false);
+        jTA_Dekodowanie_Odkodowany_Tekst_Text.setBackground(java.awt.Color.darkGray);
+        jTA_Dekodowanie_Odkodowany_Tekst_Text.setColumns(20);
+        jTA_Dekodowanie_Odkodowany_Tekst_Text.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jTA_Dekodowanie_Odkodowany_Tekst_Text.setForeground(java.awt.Color.white);
+        jTA_Dekodowanie_Odkodowany_Tekst_Text.setRows(5);
+        jTA_Dekodowanie_Odkodowany_Tekst_Text.setMargin(new java.awt.Insets(7, 7, 7, 7));
+        jSP_Dekodowanie_Odkodowany_Tekst.setViewportView(jTA_Dekodowanie_Odkodowany_Tekst_Text);
+
+        javax.swing.GroupLayout jP_DekodowanieLayout = new javax.swing.GroupLayout(jP_Dekodowanie);
+        jP_Dekodowanie.setLayout(jP_DekodowanieLayout);
+        jP_DekodowanieLayout.setHorizontalGroup(
+            jP_DekodowanieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jP_DekodowanieLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jP_DekodowanieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jSP_Dekodowanie_Tekst_Do_Odkodowania)
+                    .addComponent(jP_Dekodowanie_Buttons, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                .addGroup(jP_DekodowanieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jP_Dekodowanie_Odkodowanytekst, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jSP_Dekodowanie_Odkodowany_Tekst, javax.swing.GroupLayout.DEFAULT_SIZE, 372, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        jP_DekodowanieLayout.setVerticalGroup(
+            jP_DekodowanieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jP_DekodowanieLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jP_DekodowanieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jP_Dekodowanie_Odkodowanytekst, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jP_Dekodowanie_Buttons, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 4, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jSP1, javax.swing.GroupLayout.DEFAULT_SIZE, 252, Short.MAX_VALUE)
+                .addGroup(jP_DekodowanieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSP_Dekodowanie_Tekst_Do_Odkodowania, javax.swing.GroupLayout.DEFAULT_SIZE, 306, Short.MAX_VALUE)
+                    .addComponent(jSP_Dekodowanie_Odkodowany_Tekst))
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab("Zakoduj", jPZakoduj);
+        jTB1.addTab("Dekodowanie", jP_Dekodowanie);
 
-        jPOdkoduj.setBackground(java.awt.Color.lightGray);
-
-        javax.swing.GroupLayout jPOdkodujLayout = new javax.swing.GroupLayout(jPOdkoduj);
-        jPOdkoduj.setLayout(jPOdkodujLayout);
-        jPOdkodujLayout.setHorizontalGroup(
-            jPOdkodujLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 380, Short.MAX_VALUE)
+        javax.swing.GroupLayout jP_AllLayout = new javax.swing.GroupLayout(jP_All);
+        jP_All.setLayout(jP_AllLayout);
+        jP_AllLayout.setHorizontalGroup(
+            jP_AllLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jTB1)
         );
-        jPOdkodujLayout.setVerticalGroup(
-            jPOdkodujLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 345, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("Odkoduj", null, jPOdkoduj, "");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTabbedPane1)
-                .addContainerGap())
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTabbedPane1)
-                .addContainerGap())
-        );
-
-        jPanel3.setBackground(java.awt.Color.gray);
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 380, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+        jP_AllLayout.setVerticalGroup(
+            jP_AllLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jTB1)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jP_All, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jP_All, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jB_Kodowanie_Buttons_Wyczyść1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_Kodowanie_Buttons_Wyczyść1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        jTA_Kodowanie_Tekst_Do_Zakodowania_Text.setText("");
+    }//GEN-LAST:event_jB_Kodowanie_Buttons_Wyczyść1ActionPerformed
+
+    private void jB_Dekodowanie_Buttons_Wyczysc2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_Dekodowanie_Buttons_Wyczysc2ActionPerformed
+        // TODO add your handling code here:
+        jTA_Dekodowanie_Tekst_Do_Odkodowania_Text.setText("");
+    }//GEN-LAST:event_jB_Dekodowanie_Buttons_Wyczysc2ActionPerformed
+
+    private void jB_Kodowanie_Buttons_ZakodujActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_Kodowanie_Buttons_ZakodujActionPerformed
+        // TODO add your handling code here:
+        String Zakodowany_tekst = jTA_Kodowanie_Tekst_Do_Zakodowania_Text.getText();
+        
+        char[] alfabet = new char[26];
+            alfabet[0] = 'a';
+            alfabet[1] = 'b';
+            alfabet[2] = 'c';
+            alfabet[3] = 'd';
+            alfabet[4] = 'e';
+            alfabet[5] = 'f';
+            alfabet[6] = 'g';
+            alfabet[7] = 'h';
+            alfabet[8] = 'i';
+            alfabet[9] = 'j';
+            alfabet[10] = 'k';
+            alfabet[11] = 'l';
+            alfabet[12] = 'm';
+            alfabet[13] = 'n';
+            alfabet[14] = 'o';
+            alfabet[15] = 'p';
+            alfabet[16] = 'q';
+            alfabet[17] = 'r';
+            alfabet[18] = 's';
+            alfabet[19] = 't';
+            alfabet[20] = 'u';
+            alfabet[21] = 'v';
+            alfabet[22] = 'w';
+            alfabet[23] = 'x';
+            alfabet[24] = 'y';
+            alfabet[25] = 'z';
+            
+        char[] charsFromString = Zakodowany_tekst.toCharArray();
+        char Zakodowany_tekst_Tab;
+        for (int i = 0; i <= (Zakodowany_tekst.length() - 1); i++) {
+            Zakodowany_tekst_Tab = charsFromString[i];
+            
+            
+            if (Zakodowany_tekst_Tab == alfabet[0]) {
+                Zakodowany_tekst_Tab = 'z';
+            } else if (Zakodowany_tekst_Tab == alfabet[1]) {
+                Zakodowany_tekst_Tab = 'y';
+            } else if (Zakodowany_tekst_Tab == alfabet[2]) {
+                Zakodowany_tekst_Tab = 'x';
+            } else if (Zakodowany_tekst_Tab == alfabet[3]) {
+                Zakodowany_tekst_Tab = 'w';
+            } else if (Zakodowany_tekst_Tab == alfabet[4]) {
+                Zakodowany_tekst_Tab = 'v';
+            } else if (Zakodowany_tekst_Tab == alfabet[5]) {
+                Zakodowany_tekst_Tab = 'u';
+            } else if (Zakodowany_tekst_Tab == alfabet[6]) {
+                Zakodowany_tekst_Tab = 't';
+            } else if (Zakodowany_tekst_Tab == alfabet[7]) {
+                Zakodowany_tekst_Tab = 's';
+            } else if (Zakodowany_tekst_Tab == alfabet[8]) {
+                Zakodowany_tekst_Tab = 'r';
+            } else if (Zakodowany_tekst_Tab == alfabet[9]) {
+                Zakodowany_tekst_Tab = 'q';
+            } else if (Zakodowany_tekst_Tab == alfabet[10]) {
+                Zakodowany_tekst_Tab = 'p';
+            } else if (Zakodowany_tekst_Tab == alfabet[11]) {
+                Zakodowany_tekst_Tab = 'o';
+            } else if (Zakodowany_tekst_Tab == alfabet[12]) {
+                Zakodowany_tekst_Tab = 'n';
+            } else if (Zakodowany_tekst_Tab == alfabet[13]) {
+                Zakodowany_tekst_Tab = 'm';
+            } else if (Zakodowany_tekst_Tab == alfabet[14]) {
+                Zakodowany_tekst_Tab = 'l';
+            } else if (Zakodowany_tekst_Tab == alfabet[15]) {
+                Zakodowany_tekst_Tab = 'k';
+            } else if (Zakodowany_tekst_Tab == alfabet[16]) {
+                Zakodowany_tekst_Tab = 'j';
+            } else if (Zakodowany_tekst_Tab == alfabet[17]) {
+                Zakodowany_tekst_Tab = 'i';
+            } else if (Zakodowany_tekst_Tab == alfabet[18]) {
+                Zakodowany_tekst_Tab = 'h';
+            } else if (Zakodowany_tekst_Tab == alfabet[19]) {
+                Zakodowany_tekst_Tab = 'g';
+            } else if (Zakodowany_tekst_Tab == alfabet[20]) {
+                Zakodowany_tekst_Tab = 'f';
+            } else if (Zakodowany_tekst_Tab == alfabet[21]) {
+                Zakodowany_tekst_Tab = 'e';
+            } else if (Zakodowany_tekst_Tab == alfabet[22]) {
+                Zakodowany_tekst_Tab = 'd';
+            } else if (Zakodowany_tekst_Tab == alfabet[23]) {
+                Zakodowany_tekst_Tab = 'c';
+            } else if (Zakodowany_tekst_Tab == alfabet[24]) {
+                Zakodowany_tekst_Tab = 'b';
+            } else if (Zakodowany_tekst_Tab == alfabet[25]) {
+                Zakodowany_tekst_Tab = 'a';
+            }
+            System.out.print(Zakodowany_tekst_Tab);
+            
+            try {
+                BufferedWriter writer = new BufferedWriter(new FileWriter(file, true));
+                
+                writer.append(Zakodowany_tekst_Tab);
+                writer.close();
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(Kodowanie_dekodowanie.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(Kodowanie_dekodowanie.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_jB_Kodowanie_Buttons_ZakodujActionPerformed
+
+    private void jB_Kodowanie_Buttons_WczytajActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_Kodowanie_Buttons_WczytajActionPerformed
+        // TODO add your handling code here:
+        
+        Scanner scanner = null;
+        try {
+            scanner = new Scanner(file);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Kodowanie_dekodowanie.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        String linia1 = null;
+        while (scanner.hasNext()) {
+            linia1 = scanner.nextLine();
+            System.out.println(linia1);
+        }
+            jTA_Kodowanie_Zakodowany_Tekst_Text.setText(linia1);
+    }//GEN-LAST:event_jB_Kodowanie_Buttons_WczytajActionPerformed
 
     /**
      * @param args the command line arguments
@@ -235,17 +540,29 @@ public class Kodowanie_dekodowanie extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JPanel jPOdkoduj;
-    private javax.swing.JPanel jPZakoduj;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jSP1;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JButton jB_Dekodowanie_Buttons_Odkoduj;
+    private javax.swing.JButton jB_Dekodowanie_Buttons_Wczytaj;
+    private javax.swing.JButton jB_Dekodowanie_Buttons_Wyczysc2;
+    private javax.swing.JButton jB_Kodowanie_Buttons_Wczytaj;
+    private javax.swing.JButton jB_Kodowanie_Buttons_Wyczyść1;
+    private javax.swing.JButton jB_Kodowanie_Buttons_Zakoduj;
+    private javax.swing.JLabel jL_Dekodowanie_Odkodowanytekst_Text;
+    private javax.swing.JLabel jL_Kodowanie_Zakodowanytekst_Text;
+    private javax.swing.JPanel jP_All;
+    private javax.swing.JPanel jP_Dekodowanie;
+    private javax.swing.JPanel jP_Dekodowanie_Buttons;
+    private javax.swing.JPanel jP_Dekodowanie_Odkodowanytekst;
+    private javax.swing.JPanel jP_Kodowanie;
+    private javax.swing.JPanel jP_Kodowanie_Buttons;
+    private javax.swing.JPanel jP_Kodowanie_Zakodowanytekst;
+    private javax.swing.JScrollPane jSP_Dekodowanie_Odkodowany_Tekst;
+    private javax.swing.JScrollPane jSP_Dekodowanie_Tekst_Do_Odkodowania;
+    private javax.swing.JScrollPane jSP_Kodowanie_Tekst_Do_Zakodowania;
+    private javax.swing.JScrollPane jSP_Kodowanie_Zakodowany_Tekst;
+    private javax.swing.JTextArea jTA_Dekodowanie_Odkodowany_Tekst_Text;
+    private javax.swing.JTextArea jTA_Dekodowanie_Tekst_Do_Odkodowania_Text;
+    private javax.swing.JTextArea jTA_Kodowanie_Tekst_Do_Zakodowania_Text;
+    private javax.swing.JTextArea jTA_Kodowanie_Zakodowany_Tekst_Text;
+    private javax.swing.JTabbedPane jTB1;
     // End of variables declaration//GEN-END:variables
 }

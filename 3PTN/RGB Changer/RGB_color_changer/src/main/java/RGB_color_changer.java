@@ -196,7 +196,7 @@ public class RGB_color_changer extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jP_BLUE_SliderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jL_BLUE_Slider, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jS_BLUE_Slider, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE))
+                    .addComponent(jS_BLUE_Slider, javax.swing.GroupLayout.PREFERRED_SIZE, 38, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -338,7 +338,7 @@ public class RGB_color_changer extends javax.swing.JFrame {
         jTF_Hex.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         jTF_Hex.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTF_Hex.setText("#ffffff");
-        jTF_Hex.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.black));
+        jTF_Hex.setBorder(javax.swing.BorderFactory.createLineBorder(null));
         jTF_Hex.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jTF_HexKeyPressed(evt);
