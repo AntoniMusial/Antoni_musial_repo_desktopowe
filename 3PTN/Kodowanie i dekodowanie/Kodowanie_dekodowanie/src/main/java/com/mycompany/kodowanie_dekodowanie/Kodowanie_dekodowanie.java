@@ -21,6 +21,12 @@ import java.util.logging.Logger;
 public class Kodowanie_dekodowanie extends javax.swing.JFrame {
 
     File file = new File("tajne.txt");
+    char[] alfabet = new char[26];
+    char Zakodowany_tekst_Tab;
+    char Odkodowany_tekst_Tab;
+    Scanner scanner;
+    String linia1;
+    String Zakodowany_tekst;
     /**
      * Creates new form Kodowanie_dekodowanie
      */
@@ -42,7 +48,7 @@ public class Kodowanie_dekodowanie extends javax.swing.JFrame {
         jP_Kodowanie = new javax.swing.JPanel();
         jP_Kodowanie_Buttons = new javax.swing.JPanel();
         jB_Kodowanie_Buttons_Zakoduj = new javax.swing.JButton();
-        jB_Kodowanie_Buttons_Wczytaj = new javax.swing.JButton();
+        jB_Kodowanie_Buttons_Zapisz = new javax.swing.JButton();
         jB_Kodowanie_Buttons_Wyczyść1 = new javax.swing.JButton();
         jP_Kodowanie_Zakodowanytekst = new javax.swing.JPanel();
         jL_Kodowanie_Zakodowanytekst_Text = new javax.swing.JLabel();
@@ -89,15 +95,15 @@ public class Kodowanie_dekodowanie extends javax.swing.JFrame {
             }
         });
 
-        jB_Kodowanie_Buttons_Wczytaj.setBackground(java.awt.Color.darkGray);
-        jB_Kodowanie_Buttons_Wczytaj.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jB_Kodowanie_Buttons_Wczytaj.setForeground(java.awt.Color.white);
-        jB_Kodowanie_Buttons_Wczytaj.setText("Zapisz");
-        jB_Kodowanie_Buttons_Wczytaj.setToolTipText("");
-        jB_Kodowanie_Buttons_Wczytaj.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.gray));
-        jB_Kodowanie_Buttons_Wczytaj.addActionListener(new java.awt.event.ActionListener() {
+        jB_Kodowanie_Buttons_Zapisz.setBackground(java.awt.Color.darkGray);
+        jB_Kodowanie_Buttons_Zapisz.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jB_Kodowanie_Buttons_Zapisz.setForeground(java.awt.Color.white);
+        jB_Kodowanie_Buttons_Zapisz.setText("Zapisz");
+        jB_Kodowanie_Buttons_Zapisz.setToolTipText("");
+        jB_Kodowanie_Buttons_Zapisz.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.gray));
+        jB_Kodowanie_Buttons_Zapisz.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jB_Kodowanie_Buttons_WczytajActionPerformed(evt);
+                jB_Kodowanie_Buttons_ZapiszActionPerformed(evt);
             }
         });
 
@@ -122,7 +128,7 @@ public class Kodowanie_dekodowanie extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                 .addComponent(jB_Kodowanie_Buttons_Wyczyść1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
-                .addComponent(jB_Kodowanie_Buttons_Wczytaj, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jB_Kodowanie_Buttons_Zapisz, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jP_Kodowanie_ButtonsLayout.setVerticalGroup(
@@ -131,7 +137,7 @@ public class Kodowanie_dekodowanie extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jP_Kodowanie_ButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jB_Kodowanie_Buttons_Zakoduj, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jB_Kodowanie_Buttons_Wczytaj, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jB_Kodowanie_Buttons_Zapisz, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jB_Kodowanie_Buttons_Wyczyść1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -226,12 +232,22 @@ public class Kodowanie_dekodowanie extends javax.swing.JFrame {
         jB_Dekodowanie_Buttons_Odkoduj.setForeground(java.awt.Color.white);
         jB_Dekodowanie_Buttons_Odkoduj.setText("Odkoduj");
         jB_Dekodowanie_Buttons_Odkoduj.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.gray));
+        jB_Dekodowanie_Buttons_Odkoduj.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_Dekodowanie_Buttons_OdkodujActionPerformed(evt);
+            }
+        });
 
         jB_Dekodowanie_Buttons_Wczytaj.setBackground(java.awt.Color.darkGray);
         jB_Dekodowanie_Buttons_Wczytaj.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jB_Dekodowanie_Buttons_Wczytaj.setForeground(java.awt.Color.white);
         jB_Dekodowanie_Buttons_Wczytaj.setText("Wczytaj");
         jB_Dekodowanie_Buttons_Wczytaj.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.gray));
+        jB_Dekodowanie_Buttons_Wczytaj.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_Dekodowanie_Buttons_WczytajActionPerformed(evt);
+            }
+        });
 
         jB_Dekodowanie_Buttons_Wyczysc2.setBackground(java.awt.Color.darkGray);
         jB_Dekodowanie_Buttons_Wyczysc2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -374,18 +390,20 @@ public class Kodowanie_dekodowanie extends javax.swing.JFrame {
     private void jB_Kodowanie_Buttons_Wyczyść1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_Kodowanie_Buttons_Wyczyść1ActionPerformed
         // TODO add your handling code here:
         jTA_Kodowanie_Tekst_Do_Zakodowania_Text.setText("");
+        jTA_Kodowanie_Zakodowany_Tekst_Text.setText("");
     }//GEN-LAST:event_jB_Kodowanie_Buttons_Wyczyść1ActionPerformed
 
     private void jB_Dekodowanie_Buttons_Wyczysc2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_Dekodowanie_Buttons_Wyczysc2ActionPerformed
         // TODO add your handling code here:
         jTA_Dekodowanie_Tekst_Do_Odkodowania_Text.setText("");
+        jTA_Dekodowanie_Odkodowany_Tekst_Text.setText("");
     }//GEN-LAST:event_jB_Dekodowanie_Buttons_Wyczysc2ActionPerformed
 
     private void jB_Kodowanie_Buttons_ZakodujActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_Kodowanie_Buttons_ZakodujActionPerformed
         // TODO add your handling code here:
-        String Zakodowany_tekst = jTA_Kodowanie_Tekst_Do_Zakodowania_Text.getText();
+        Zakodowany_tekst = jTA_Kodowanie_Tekst_Do_Zakodowania_Text.getText();
         
-        char[] alfabet = new char[26];
+        
             alfabet[0] = 'a';
             alfabet[1] = 'b';
             alfabet[2] = 'c';
@@ -414,7 +432,7 @@ public class Kodowanie_dekodowanie extends javax.swing.JFrame {
             alfabet[25] = 'z';
             
         char[] charsFromString = Zakodowany_tekst.toCharArray();
-        char Zakodowany_tekst_Tab;
+        
         for (int i = 0; i <= (Zakodowany_tekst.length() - 1); i++) {
             Zakodowany_tekst_Tab = charsFromString[i];
             
@@ -473,36 +491,222 @@ public class Kodowanie_dekodowanie extends javax.swing.JFrame {
                 Zakodowany_tekst_Tab = 'a';
             }
             System.out.print(Zakodowany_tekst_Tab);
+            String Zakodowany_text = Character.toString(Zakodowany_tekst_Tab);
+            jTA_Kodowanie_Zakodowany_Tekst_Text.setText(jTA_Kodowanie_Zakodowany_Tekst_Text.getText() + Zakodowany_text); 
+        }
+    }//GEN-LAST:event_jB_Kodowanie_Buttons_ZakodujActionPerformed
+
+    private void jB_Kodowanie_Buttons_ZapiszActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_Kodowanie_Buttons_ZapiszActionPerformed
+        // TODO add your handling code here:
+            alfabet[0] = 'a';
+            alfabet[1] = 'b';
+            alfabet[2] = 'c';
+            alfabet[3] = 'd';
+            alfabet[4] = 'e';
+            alfabet[5] = 'f';
+            alfabet[6] = 'g';
+            alfabet[7] = 'h';
+            alfabet[8] = 'i';
+            alfabet[9] = 'j';
+            alfabet[10] = 'k';
+            alfabet[11] = 'l';
+            alfabet[12] = 'm';
+            alfabet[13] = 'n';
+            alfabet[14] = 'o';
+            alfabet[15] = 'p';
+            alfabet[16] = 'q';
+            alfabet[17] = 'r';
+            alfabet[18] = 's';
+            alfabet[19] = 't';
+            alfabet[20] = 'u';
+            alfabet[21] = 'v';
+            alfabet[22] = 'w';
+            alfabet[23] = 'x';
+            alfabet[24] = 'y';
+            alfabet[25] = 'z';
             
+        char[] charsFromString = Zakodowany_tekst.toCharArray();
+        
+        for (int i = 0; i <= (Zakodowany_tekst.length() - 1); i++) {
+            Zakodowany_tekst_Tab = charsFromString[i];
+            
+            
+            if (Zakodowany_tekst_Tab == alfabet[0]) {
+                Zakodowany_tekst_Tab = 'z';
+            } else if (Zakodowany_tekst_Tab == alfabet[1]) {
+                Zakodowany_tekst_Tab = 'y';
+            } else if (Zakodowany_tekst_Tab == alfabet[2]) {
+                Zakodowany_tekst_Tab = 'x';
+            } else if (Zakodowany_tekst_Tab == alfabet[3]) {
+                Zakodowany_tekst_Tab = 'w';
+            } else if (Zakodowany_tekst_Tab == alfabet[4]) {
+                Zakodowany_tekst_Tab = 'v';
+            } else if (Zakodowany_tekst_Tab == alfabet[5]) {
+                Zakodowany_tekst_Tab = 'u';
+            } else if (Zakodowany_tekst_Tab == alfabet[6]) {
+                Zakodowany_tekst_Tab = 't';
+            } else if (Zakodowany_tekst_Tab == alfabet[7]) {
+                Zakodowany_tekst_Tab = 's';
+            } else if (Zakodowany_tekst_Tab == alfabet[8]) {
+                Zakodowany_tekst_Tab = 'r';
+            } else if (Zakodowany_tekst_Tab == alfabet[9]) {
+                Zakodowany_tekst_Tab = 'q';
+            } else if (Zakodowany_tekst_Tab == alfabet[10]) {
+                Zakodowany_tekst_Tab = 'p';
+            } else if (Zakodowany_tekst_Tab == alfabet[11]) {
+                Zakodowany_tekst_Tab = 'o';
+            } else if (Zakodowany_tekst_Tab == alfabet[12]) {
+                Zakodowany_tekst_Tab = 'n';
+            } else if (Zakodowany_tekst_Tab == alfabet[13]) {
+                Zakodowany_tekst_Tab = 'm';
+            } else if (Zakodowany_tekst_Tab == alfabet[14]) {
+                Zakodowany_tekst_Tab = 'l';
+            } else if (Zakodowany_tekst_Tab == alfabet[15]) {
+                Zakodowany_tekst_Tab = 'k';
+            } else if (Zakodowany_tekst_Tab == alfabet[16]) {
+                Zakodowany_tekst_Tab = 'j';
+            } else if (Zakodowany_tekst_Tab == alfabet[17]) {
+                Zakodowany_tekst_Tab = 'i';
+            } else if (Zakodowany_tekst_Tab == alfabet[18]) {
+                Zakodowany_tekst_Tab = 'h';
+            } else if (Zakodowany_tekst_Tab == alfabet[19]) {
+                Zakodowany_tekst_Tab = 'g';
+            } else if (Zakodowany_tekst_Tab == alfabet[20]) {
+                Zakodowany_tekst_Tab = 'f';
+            } else if (Zakodowany_tekst_Tab == alfabet[21]) {
+                Zakodowany_tekst_Tab = 'e';
+            } else if (Zakodowany_tekst_Tab == alfabet[22]) {
+                Zakodowany_tekst_Tab = 'd';
+            } else if (Zakodowany_tekst_Tab == alfabet[23]) {
+                Zakodowany_tekst_Tab = 'c';
+            } else if (Zakodowany_tekst_Tab == alfabet[24]) {
+                Zakodowany_tekst_Tab = 'b';
+            } else if (Zakodowany_tekst_Tab == alfabet[25]) {
+                Zakodowany_tekst_Tab = 'a';
+            }
             try {
-                BufferedWriter writer = new BufferedWriter(new FileWriter(file, true));
-                
-                writer.append(Zakodowany_tekst_Tab);
-                writer.close();
+                try (java.io.BufferedWriter writer = new BufferedWriter(new FileWriter(file, true))) {
+                    writer.append(Zakodowany_tekst_Tab);
+                    writer.close();
+                }
             } catch (FileNotFoundException ex) {
                 Logger.getLogger(Kodowanie_dekodowanie.class.getName()).log(Level.SEVERE, null, ex);
             } catch (IOException ex) {
                 Logger.getLogger(Kodowanie_dekodowanie.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-    }//GEN-LAST:event_jB_Kodowanie_Buttons_ZakodujActionPerformed
+    }//GEN-LAST:event_jB_Kodowanie_Buttons_ZapiszActionPerformed
 
-    private void jB_Kodowanie_Buttons_WczytajActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_Kodowanie_Buttons_WczytajActionPerformed
+    private void jB_Dekodowanie_Buttons_WczytajActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_Dekodowanie_Buttons_WczytajActionPerformed
         // TODO add your handling code here:
-        
-        Scanner scanner = null;
         try {
             scanner = new Scanner(file);
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Kodowanie_dekodowanie.class.getName()).log(Level.SEVERE, null, ex);
         }
-        String linia1 = null;
         while (scanner.hasNext()) {
-            linia1 = scanner.nextLine();
-            System.out.println(linia1);
+            Zakodowany_tekst = scanner.nextLine();
+            System.out.println(Zakodowany_tekst);
         }
-            jTA_Kodowanie_Zakodowany_Tekst_Text.setText(linia1);
-    }//GEN-LAST:event_jB_Kodowanie_Buttons_WczytajActionPerformed
+            jTA_Dekodowanie_Tekst_Do_Odkodowania_Text.setText(Zakodowany_tekst);
+    }//GEN-LAST:event_jB_Dekodowanie_Buttons_WczytajActionPerformed
+
+    private void jB_Dekodowanie_Buttons_OdkodujActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_Dekodowanie_Buttons_OdkodujActionPerformed
+        // TODO add your handling code here:
+        String Odkodowany_tekst = jTA_Dekodowanie_Tekst_Do_Odkodowania_Text.getText();
+        
+            alfabet[0] = 'a';
+            alfabet[1] = 'b';
+            alfabet[2] = 'c';
+            alfabet[3] = 'd';
+            alfabet[4] = 'e';
+            alfabet[5] = 'f';
+            alfabet[6] = 'g';
+            alfabet[7] = 'h';
+            alfabet[8] = 'i';
+            alfabet[9] = 'j';
+            alfabet[10] = 'k';
+            alfabet[11] = 'l';
+            alfabet[12] = 'm';
+            alfabet[13] = 'n';
+            alfabet[14] = 'o';
+            alfabet[15] = 'p';
+            alfabet[16] = 'q';
+            alfabet[17] = 'r';
+            alfabet[18] = 's';
+            alfabet[19] = 't';
+            alfabet[20] = 'u';
+            alfabet[21] = 'v';
+            alfabet[22] = 'w';
+            alfabet[23] = 'x';
+            alfabet[24] = 'y';
+            alfabet[25] = 'z';
+        
+        char[] charsFromString = Odkodowany_tekst.toCharArray();
+        
+        for (int i = 0; i <= (Odkodowany_tekst.length() - 1); i++) {
+            Odkodowany_tekst_Tab = charsFromString[i];
+        
+            if (Odkodowany_tekst_Tab == alfabet[0]) {
+                Odkodowany_tekst_Tab = 'z';
+            } else if (Odkodowany_tekst_Tab == alfabet[1]) {
+                Odkodowany_tekst_Tab = 'y';
+            } else if (Odkodowany_tekst_Tab == alfabet[2]) {
+                Odkodowany_tekst_Tab = 'x';
+            } else if (Odkodowany_tekst_Tab == alfabet[3]) {
+                Odkodowany_tekst_Tab = 'w';
+            } else if (Odkodowany_tekst_Tab == alfabet[4]) {
+                Odkodowany_tekst_Tab = 'v';
+            } else if (Odkodowany_tekst_Tab == alfabet[5]) {
+                Odkodowany_tekst_Tab = 'u';
+            } else if (Odkodowany_tekst_Tab == alfabet[6]) {
+                Odkodowany_tekst_Tab = 't';
+            } else if (Odkodowany_tekst_Tab == alfabet[7]) {
+                Odkodowany_tekst_Tab = 's';
+            } else if (Odkodowany_tekst_Tab == alfabet[8]) {
+                Odkodowany_tekst_Tab = 'r';
+            } else if (Odkodowany_tekst_Tab == alfabet[9]) {
+                Odkodowany_tekst_Tab = 'q';
+            } else if (Odkodowany_tekst_Tab == alfabet[10]) {
+                Odkodowany_tekst_Tab = 'p';
+            } else if (Odkodowany_tekst_Tab == alfabet[11]) {
+                Odkodowany_tekst_Tab = 'o';
+            } else if (Odkodowany_tekst_Tab == alfabet[12]) {
+                Odkodowany_tekst_Tab = 'n';
+            } else if (Odkodowany_tekst_Tab == alfabet[13]) {
+                Odkodowany_tekst_Tab = 'm';
+            } else if (Odkodowany_tekst_Tab == alfabet[14]) {
+                Odkodowany_tekst_Tab = 'l';
+            } else if (Odkodowany_tekst_Tab == alfabet[15]) {
+                Odkodowany_tekst_Tab = 'k';
+            } else if (Odkodowany_tekst_Tab == alfabet[16]) {
+                Odkodowany_tekst_Tab = 'j';
+            } else if (Odkodowany_tekst_Tab == alfabet[17]) {
+                Odkodowany_tekst_Tab = 'i';
+            } else if (Odkodowany_tekst_Tab == alfabet[18]) {
+                Odkodowany_tekst_Tab = 'h';
+            } else if (Odkodowany_tekst_Tab == alfabet[19]) {
+                Odkodowany_tekst_Tab = 'g';
+            } else if (Odkodowany_tekst_Tab == alfabet[20]) {
+                Odkodowany_tekst_Tab = 'f';
+            } else if (Odkodowany_tekst_Tab == alfabet[21]) {
+                Odkodowany_tekst_Tab = 'e';
+            } else if (Odkodowany_tekst_Tab == alfabet[22]) {
+                Odkodowany_tekst_Tab = 'd';
+            } else if (Odkodowany_tekst_Tab == alfabet[23]) {
+                Odkodowany_tekst_Tab = 'c';
+            } else if (Odkodowany_tekst_Tab == alfabet[24]) {
+                Odkodowany_tekst_Tab = 'b';
+            } else if (Odkodowany_tekst_Tab == alfabet[25]) {
+                Odkodowany_tekst_Tab = 'a';
+            }
+
+            System.out.print(Odkodowany_tekst_Tab);
+            String Odkodowany_text = Character.toString(Odkodowany_tekst_Tab);
+            jTA_Dekodowanie_Odkodowany_Tekst_Text.setText(jTA_Dekodowanie_Odkodowany_Tekst_Text.getText() + Odkodowany_text); 
+
+        }
+    }//GEN-LAST:event_jB_Dekodowanie_Buttons_OdkodujActionPerformed
 
     /**
      * @param args the command line arguments
@@ -543,9 +747,9 @@ public class Kodowanie_dekodowanie extends javax.swing.JFrame {
     private javax.swing.JButton jB_Dekodowanie_Buttons_Odkoduj;
     private javax.swing.JButton jB_Dekodowanie_Buttons_Wczytaj;
     private javax.swing.JButton jB_Dekodowanie_Buttons_Wyczysc2;
-    private javax.swing.JButton jB_Kodowanie_Buttons_Wczytaj;
     private javax.swing.JButton jB_Kodowanie_Buttons_Wyczyść1;
     private javax.swing.JButton jB_Kodowanie_Buttons_Zakoduj;
+    private javax.swing.JButton jB_Kodowanie_Buttons_Zapisz;
     private javax.swing.JLabel jL_Dekodowanie_Odkodowanytekst_Text;
     private javax.swing.JLabel jL_Kodowanie_Zakodowanytekst_Text;
     private javax.swing.JPanel jP_All;

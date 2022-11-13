@@ -142,7 +142,7 @@
                               <EmptySpace pref="41" max="32767" attributes="0"/>
                               <Component id="jB_Kodowanie_Buttons_Wyczyść1" min="-2" pref="90" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="jB_Kodowanie_Buttons_Wczytaj" min="-2" pref="90" max="-2" attributes="0"/>
+                              <Component id="jB_Kodowanie_Buttons_Zapisz" min="-2" pref="90" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -153,7 +153,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Component id="jB_Kodowanie_Buttons_Zakoduj" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="jB_Kodowanie_Buttons_Wczytaj" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jB_Kodowanie_Buttons_Zapisz" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jB_Kodowanie_Buttons_Wyczyść1" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -189,7 +189,7 @@
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jB_Kodowanie_Buttons_ZakodujActionPerformed"/>
                       </Events>
                     </Component>
-                    <Component class="javax.swing.JButton" name="jB_Kodowanie_Buttons_Wczytaj">
+                    <Component class="javax.swing.JButton" name="jB_Kodowanie_Buttons_Zapisz">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="40" green="40" id="darkGray" palette="1" red="40" type="palette"/>
@@ -211,7 +211,7 @@
                         </Property>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jB_Kodowanie_Buttons_WczytajActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jB_Kodowanie_Buttons_ZapiszActionPerformed"/>
                       </Events>
                     </Component>
                     <Component class="javax.swing.JButton" name="jB_Kodowanie_Buttons_Wyczy&#x15b;&#x107;1">
@@ -487,6 +487,9 @@
                           </Border>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jB_Dekodowanie_Buttons_OdkodujActionPerformed"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JButton" name="jB_Dekodowanie_Buttons_Wczytaj">
                       <Properties>
@@ -508,6 +511,9 @@
                           </Border>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jB_Dekodowanie_Buttons_WczytajActionPerformed"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JButton" name="jB_Dekodowanie_Buttons_Wyczysc2">
                       <Properties>
