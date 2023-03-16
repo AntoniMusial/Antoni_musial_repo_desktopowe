@@ -4,10 +4,13 @@
  */
 package com.mycompany.mnemonics;
 
+import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -22,6 +25,7 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() {
         initComponents();
+        
     }
 
     /**
@@ -49,6 +53,11 @@ public class Main extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Thoughts");
         setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
 
         jSP.setToolTipText("");
         jSP.setFont(new java.awt.Font("DejaVu Sans Mono", 0, 12)); // NOI18N
@@ -164,7 +173,7 @@ public class Main extends javax.swing.JFrame {
         
         FileReader reader = null;
         try {
-            reader = new FileReader("/home/musialantoni/NetBeansProjects/mnemonics/src/main/java/com/mycompany/mnemonics/thoughts.txt");
+            reader = new FileReader("/home/musialantoni/Desktop/GitHub/Antoni_musial_repo_desktopowe/3 PTN/II Semestr/mnemonic/mnemonics/src/main/java/com/mycompany/mnemonics/thoughts.txt");
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -188,7 +197,7 @@ public class Main extends javax.swing.JFrame {
         content += "Nowytekst";
         
         try {
-            FileWriter writer = new FileWriter("/home/musialantoni/NetBeansProjects/mnemonics/src/main/java/com/mycompany/mnemonics/thoughts.txt", true);
+            FileWriter writer = new FileWriter("/home/musialantoni/Desktop/GitHub/Antoni_musial_repo_desktopowe/3 PTN/II Semestr/mnemonic/mnemonics/src/main/java/com/mycompany/mnemonics/thoughts.txt", true);
             writer.write(thoughts + "\n");
             writer.close();
             jTA_Thoughts.setText(thoughts + "\nSaved");
@@ -205,8 +214,35 @@ public class Main extends javax.swing.JFrame {
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         // TODO add your handling code here:
         jOP_About.setVisible(true);
-        jOP_About.showMessageDialog(this, "Program zbierający myśli\n Autor: Antoni Musiał");
+        
+        String about =  "<html><body>" +
+                        "<h1>O programie</h1>" +
+                        "<p>Program zbierający myśli<br> Autor: Antoni Musiał</p>" +
+                        "</body></html>";
+        
+        jOP_About.showMessageDialog(null, about, "About", jOP_About.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        // TODO add your handling code here:
+        System.out.print("s");
+        
+        File file = new File("/home/musialantoni/Desktop/GitHub/Antoni_musial_repo_desktopowe/3 PTN/II Semestr/mnemonic/mnemonics/src/main/java/com/mycompany/mnemonics/thoughts.txt");
+        
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            String LastThought = "";
+            String line;
+            while ((line = br.readLine()) != null) {
+                LastThought = line;
+            }
+            br.close();
+            System.out.println(LastThought);
+            jTA_Thoughts.setText(LastThought);
+        } catch (IOException e) {
+            System.out.println("Błąd odczytu pliku");
+        }
+    }//GEN-LAST:event_formWindowActivated
 
     /**
      * @param args the command line arguments
