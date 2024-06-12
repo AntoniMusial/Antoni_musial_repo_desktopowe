@@ -8,6 +8,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>18</maven.compiler.source>
         <maven.compiler.target>18</maven.compiler.target>
-        <exec.mainClass>com.mycompany.filmoteka.Filmoteka</exec.mainClass>
+        <exec.mainClass>com.mycompany.filmoteka.Main</exec.mainClass>
     </properties>
 </project>
