@@ -4,6 +4,11 @@
  */
 package com.mycompany.filmoteka;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author hp
@@ -23,6 +28,37 @@ public class Main extends javax.swing.JFrame {
         "amerykański superbohaterski serial dramatyczny na podstawie postaci o tym samym pseudonimie z komiksów wydawnictwa Marvel Comics. Twórcą serialu był Jeremy Slater, który odpowiadał za scenariusz, reżyserią zajęli się Mohamed Diab, Justin Benson i Aaron Moorhead.",
         "amerykański dramatyczny serial superbohaterski z lat 2015–2018 na podstawie komiksów o postaci o tym samym imieniu wydawnictwa Marvel Comics. Twórcą serialu był Drew Goddard, a został on wyprodukowany przez ABC Studios, Marvel Television, DeKnight Productions i Goddard Textiles."
     };
+    static ImageIcon iconCreed3 = new ImageIcon("./images/creed3.jpg");
+    static ImageIcon iconDaredevil = new ImageIcon("./images/daredevil.jpg");
+    static ImageIcon iconFantasmas = new ImageIcon("./images/fantasmas.jpg");
+    static ImageIcon iconGodzillaikong = new ImageIcon("./images/godzillaikong.jpg");
+    static ImageIcon iconKungFuPanda = new ImageIcon("./images/kungfupanda.jpg");
+    static ImageIcon iconLasuch = new ImageIcon("./images/lasuch.jpg");
+    static Icon iconLegend = new ImageIcon("legend.jpg");
+    static ImageIcon iconMoonKnight = new ImageIcon("./images/moonknight.jpg");
+    static ImageIcon iconTajnaInwazja = new ImageIcon("../images/tajnainwazja.jpg");
+    
+        static {
+        // Używanie ścieżki względnej do ładowania obrazu
+        Path imagePath = Paths.get("src", "main", "java", "com", "mycompany", "filmoteka", "images", "tajnainwazja.jpg");
+        iconTajnaInwazja = new ImageIcon(imagePath.toString());
+
+        // Sprawdzenie poprawności ładowania obrazu
+        if (iconTajnaInwazja.getImageLoadStatus() == java.awt.MediaTracker.ERRORED) {
+            System.err.println("Nie można znaleźć obrazu: " + imagePath);
+        }
+
+        // Podobnie dla innych obrazów
+        iconCreed3 = new ImageIcon(Paths.get("src", "main", "java", "com", "mycompany", "filmoteka", "images", "creed3.jpg").toString());
+        iconGodzillaikong = new ImageIcon(Paths.get("src", "main", "java", "com", "mycompany", "filmoteka", "images", "godzillaikong.jpg").toString());
+        iconKungFuPanda = new ImageIcon(Paths.get("src", "main", "java", "com", "mycompany", "filmoteka", "images", "kungfupanda.jpg").toString());
+        iconLegend = new ImageIcon(Paths.get("src", "main", "java", "com", "mycompany", "filmoteka", "images", "legend.jpg").toString());
+        iconFantasmas = new ImageIcon(Paths.get("src", "main", "java", "com", "mycompany", "filmoteka", "images", "fantasmas.jpg").toString());
+        iconLasuch = new ImageIcon(Paths.get("src", "main", "java", "com", "mycompany", "filmoteka", "images", "lasuch.jpg").toString());
+        iconMoonKnight = new ImageIcon(Paths.get("src", "main", "java", "com", "mycompany", "filmoteka", "images", "moonknight.jpg").toString());
+        iconDaredevil = new ImageIcon(Paths.get("src", "main", "java", "com", "mycompany", "filmoteka", "images", "daredevil.jpg").toString());
+        iconTajnaInwazja = new ImageIcon(Paths.get("src", "main", "java", "com", "mycompany", "filmoteka", "images", "tajnainwazja.png").toString());
+    }
 
     /**
      * Creates new form Main
@@ -734,6 +770,9 @@ public class Main extends javax.swing.JFrame {
         jL_ZdjecieFilmu.setForeground(java.awt.Color.black);
         jL_ZdjecieFilmu.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jL_ZdjecieFilmu.setText("Zdjęcie");
+        jL_ZdjecieFilmu.setToolTipText("Zdjęcie");
+        jL_ZdjecieFilmu.setMaximumSize(new java.awt.Dimension(219, 162));
+        jL_ZdjecieFilmu.setPreferredSize(new java.awt.Dimension(219, 162));
 
         jLabel4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel4.setForeground(java.awt.Color.black);
@@ -744,7 +783,7 @@ public class Main extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -761,23 +800,23 @@ public class Main extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jP_PodgladFilmu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jL_ZdjecieFilmu, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)))
+                        .addComponent(jL_ZdjecieFilmu, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jP_PodgladFilmu, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jP_PodgladFilmu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel4))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jL_ZdjecieFilmu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 12, Short.MAX_VALUE)
+                        .addComponent(jL_ZdjecieFilmu, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -804,6 +843,8 @@ public class Main extends javax.swing.JFrame {
         ocenaFilmu = jCB_OcenaLegend.getSelectedIndex() + 1;
         setOcenaFilmu(ocenaFilmu);
         jTA_OpisFilmu.setText(opisyFilmu[0]);
+        jL_ZdjecieFilmu.setText("");
+        jL_ZdjecieFilmu.setIcon(iconLegend);
     }//GEN-LAST:event_jB_PodgladLegendMouseClicked
 
     private void jB_Creed3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_Creed3MouseClicked
@@ -813,6 +854,8 @@ public class Main extends javax.swing.JFrame {
         ocenaFilmu = jCB_OcenaCreed3.getSelectedIndex() + 1;
         setOcenaFilmu(ocenaFilmu);
         jTA_OpisFilmu.setText(opisyFilmu[1]);
+        jL_ZdjecieFilmu.setText("");
+        jL_ZdjecieFilmu.setIcon(iconCreed3);
     }//GEN-LAST:event_jB_Creed3MouseClicked
 
     private void jB_PodgladGodzillaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_PodgladGodzillaMouseClicked
@@ -822,6 +865,8 @@ public class Main extends javax.swing.JFrame {
         ocenaFilmu = jCB_OcenaGodzilla.getSelectedIndex() + 1;
         setOcenaFilmu(ocenaFilmu);
         jTA_OpisFilmu.setText(opisyFilmu[2]);
+        jL_ZdjecieFilmu.setText("");
+        jL_ZdjecieFilmu.setIcon(iconGodzillaikong);
     }//GEN-LAST:event_jB_PodgladGodzillaMouseClicked
 
     private void jB_PodgladKungFuPanda4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_PodgladKungFuPanda4MouseClicked
@@ -831,6 +876,8 @@ public class Main extends javax.swing.JFrame {
         ocenaFilmu = jCB_OcenaKungFuPanda4.getSelectedIndex() + 1;
         setOcenaFilmu(ocenaFilmu);
         jTA_OpisFilmu.setText(opisyFilmu[3]);
+        jL_ZdjecieFilmu.setText("");
+        jL_ZdjecieFilmu.setIcon(iconKungFuPanda);
     }//GEN-LAST:event_jB_PodgladKungFuPanda4MouseClicked
 
     private void jB_PodgladTajnaInwazjaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_PodgladTajnaInwazjaMouseClicked
@@ -840,6 +887,8 @@ public class Main extends javax.swing.JFrame {
         ocenaFilmu = jCB_OcenaTajnaInwazja.getSelectedIndex() + 1;
         setOcenaFilmu(ocenaFilmu);
         jTA_OpisFilmu.setText(opisyFilmu[4]);
+        jL_ZdjecieFilmu.setText("");
+        jL_ZdjecieFilmu.setIcon(iconTajnaInwazja);
     }//GEN-LAST:event_jB_PodgladTajnaInwazjaMouseClicked
 
     private void jB_PodgladFantasmasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_PodgladFantasmasMouseClicked
@@ -849,6 +898,8 @@ public class Main extends javax.swing.JFrame {
         ocenaFilmu = jCB_OcenaFantasmas.getSelectedIndex() + 1;
         setOcenaFilmu(ocenaFilmu);
         jTA_OpisFilmu.setText(opisyFilmu[5]);
+        jL_ZdjecieFilmu.setText("");
+        jL_ZdjecieFilmu.setIcon(iconFantasmas);
     }//GEN-LAST:event_jB_PodgladFantasmasMouseClicked
 
     private void jB_PodgladLasuchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_PodgladLasuchMouseClicked
@@ -858,6 +909,8 @@ public class Main extends javax.swing.JFrame {
         ocenaFilmu = jCB_OcenaLasuch.getSelectedIndex() + 1;
         setOcenaFilmu(ocenaFilmu);
         jTA_OpisFilmu.setText(opisyFilmu[6]);
+        jL_ZdjecieFilmu.setText("");
+        jL_ZdjecieFilmu.setIcon(iconLasuch);
     }//GEN-LAST:event_jB_PodgladLasuchMouseClicked
 
     private void jB_PodgladMoonKnightMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_PodgladMoonKnightMouseClicked
@@ -867,6 +920,8 @@ public class Main extends javax.swing.JFrame {
         ocenaFilmu = jCB_OcenaMoonKnight.getSelectedIndex() + 1;
         setOcenaFilmu(ocenaFilmu);
         jTA_OpisFilmu.setText(opisyFilmu[7]);
+        jL_ZdjecieFilmu.setText("");
+        jL_ZdjecieFilmu.setIcon(iconMoonKnight);
     }//GEN-LAST:event_jB_PodgladMoonKnightMouseClicked
 
     private void jB_PodgladDaredevilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_PodgladDaredevilMouseClicked
@@ -876,6 +931,8 @@ public class Main extends javax.swing.JFrame {
         ocenaFilmu = jCB_OcenaDaredevil.getSelectedIndex() + 1;
         setOcenaFilmu(ocenaFilmu);
         jTA_OpisFilmu.setText(opisyFilmu[8]);
+        jL_ZdjecieFilmu.setText("");
+        jL_ZdjecieFilmu.setIcon(iconDaredevil);
     }//GEN-LAST:event_jB_PodgladDaredevilMouseClicked
 
     public void setBorderTittle(String tytulFilmu) {
