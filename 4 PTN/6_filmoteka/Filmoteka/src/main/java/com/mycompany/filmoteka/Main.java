@@ -9,6 +9,7 @@ package com.mycompany.filmoteka;
  * @author hp
  */
 public class Main extends javax.swing.JFrame {
+    static String tytulFilmu;
 
     /**
      * Creates new form Main
@@ -78,13 +79,13 @@ public class Main extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        jL_IloscSeriali = new javax.swing.JLabel();
+        jL_IloscFilmow = new javax.swing.JLabel();
+        jL_SredniaOcena = new javax.swing.JLabel();
+        jP_PodgladFilmu = new javax.swing.JPanel();
+        jL_OpisFilmu = new javax.swing.JLabel();
+        jL_OcenaFilmu = new javax.swing.JLabel();
+        jL_ZdjecieFilmu = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -116,6 +117,11 @@ public class Main extends javax.swing.JFrame {
         jB_PodgladLegend.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jB_PodgladLegend.setForeground(java.awt.Color.black);
         jB_PodgladLegend.setText("Podgląd");
+        jB_PodgladLegend.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jB_PodgladLegendMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -164,6 +170,11 @@ public class Main extends javax.swing.JFrame {
         jB_Creed3.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jB_Creed3.setForeground(java.awt.Color.black);
         jB_Creed3.setText("Podgląd");
+        jB_Creed3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jB_Creed3MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -212,6 +223,11 @@ public class Main extends javax.swing.JFrame {
         jB_PodgladGodzilla.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jB_PodgladGodzilla.setForeground(java.awt.Color.black);
         jB_PodgladGodzilla.setText("Podgląd");
+        jB_PodgladGodzilla.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jB_PodgladGodzillaMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -260,6 +276,11 @@ public class Main extends javax.swing.JFrame {
         jB_PodgladKungFuPanda4.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jB_PodgladKungFuPanda4.setForeground(java.awt.Color.black);
         jB_PodgladKungFuPanda4.setText("Podgląd");
+        jB_PodgladKungFuPanda4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jB_PodgladKungFuPanda4MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -308,6 +329,11 @@ public class Main extends javax.swing.JFrame {
         jB_PodgladTajnaInwazja.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jB_PodgladTajnaInwazja.setForeground(java.awt.Color.black);
         jB_PodgladTajnaInwazja.setText("Podgląd");
+        jB_PodgladTajnaInwazja.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jB_PodgladTajnaInwazjaMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -356,6 +382,11 @@ public class Main extends javax.swing.JFrame {
         jB_PodgladFantasmas.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jB_PodgladFantasmas.setForeground(java.awt.Color.black);
         jB_PodgladFantasmas.setText("Podgląd");
+        jB_PodgladFantasmas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jB_PodgladFantasmasMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -404,6 +435,11 @@ public class Main extends javax.swing.JFrame {
         jB_PodgladLasuch.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jB_PodgladLasuch.setForeground(java.awt.Color.black);
         jB_PodgladLasuch.setText("Podgląd");
+        jB_PodgladLasuch.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jB_PodgladLasuchMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
@@ -452,6 +488,11 @@ public class Main extends javax.swing.JFrame {
         jB_PodgladMoonKnight.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jB_PodgladMoonKnight.setForeground(java.awt.Color.black);
         jB_PodgladMoonKnight.setText("Podgląd");
+        jB_PodgladMoonKnight.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jB_PodgladMoonKnightMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
@@ -500,6 +541,11 @@ public class Main extends javax.swing.JFrame {
         jB_PodgladDaredevil.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jB_PodgladDaredevil.setForeground(java.awt.Color.black);
         jB_PodgladDaredevil.setText("Podgląd");
+        jB_PodgladDaredevil.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jB_PodgladDaredevilMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
@@ -609,17 +655,17 @@ public class Main extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 153));
 
-        jLabel7.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel7.setForeground(java.awt.Color.black);
-        jLabel7.setText("5");
+        jL_IloscSeriali.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jL_IloscSeriali.setForeground(java.awt.Color.black);
+        jL_IloscSeriali.setText("5");
 
-        jLabel6.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel6.setForeground(java.awt.Color.black);
-        jLabel6.setText("4");
+        jL_IloscFilmow.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jL_IloscFilmow.setForeground(java.awt.Color.black);
+        jL_IloscFilmow.setText("4");
 
-        jLabel5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel5.setForeground(java.awt.Color.black);
-        jLabel5.setText("10");
+        jL_SredniaOcena.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jL_SredniaOcena.setForeground(java.awt.Color.black);
+        jL_SredniaOcena.setText("10");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -628,58 +674,55 @@ public class Main extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel7))
+                    .addComponent(jL_SredniaOcena)
+                    .addComponent(jL_IloscFilmow)
+                    .addComponent(jL_IloscSeriali))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel5)
+                .addComponent(jL_SredniaOcena)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel6)
+                .addComponent(jL_IloscFilmow)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel7)
+                .addComponent(jL_IloscSeriali)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel5.setBackground(new java.awt.Color(255, 255, 153));
-        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Nazwa filmu", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 14), java.awt.Color.black)); // NOI18N
+        jP_PodgladFilmu.setBackground(new java.awt.Color(255, 255, 153));
+        jP_PodgladFilmu.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Nazwa filmu", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 14), java.awt.Color.black)); // NOI18N
 
-        jLabel9.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel9.setForeground(java.awt.Color.black);
-        jLabel9.setText("Opis");
-        jLabel9.setEnabled(false);
+        jL_OpisFilmu.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jL_OpisFilmu.setForeground(java.awt.Color.black);
+        jL_OpisFilmu.setText("Opis");
+        jL_OpisFilmu.setEnabled(false);
 
-        jLabel10.setFont(new java.awt.Font("Dialog", 1, 48)); // NOI18N
-        jLabel10.setForeground(java.awt.Color.black);
-        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setText("1");
+        jL_OcenaFilmu.setFont(new java.awt.Font("Dialog", 1, 48)); // NOI18N
+        jL_OcenaFilmu.setForeground(java.awt.Color.black);
+        jL_OcenaFilmu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jL_OcenaFilmu.setText("1");
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+        javax.swing.GroupLayout jP_PodgladFilmuLayout = new javax.swing.GroupLayout(jP_PodgladFilmu);
+        jP_PodgladFilmu.setLayout(jP_PodgladFilmuLayout);
+        jP_PodgladFilmuLayout.setHorizontalGroup(
+            jP_PodgladFilmuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jP_PodgladFilmuLayout.createSequentialGroup()
+                .addComponent(jL_OpisFilmu, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE))
+                .addComponent(jL_OcenaFilmu, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE))
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+        jP_PodgladFilmuLayout.setVerticalGroup(
+            jP_PodgladFilmuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jL_OpisFilmu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jL_OcenaFilmu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jLabel8.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jLabel8.setForeground(java.awt.Color.black);
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel8.setText("Zdjęcie");
+        jL_ZdjecieFilmu.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jL_ZdjecieFilmu.setForeground(java.awt.Color.black);
+        jL_ZdjecieFilmu.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jL_ZdjecieFilmu.setText("Zdjęcie");
 
         jLabel4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel4.setForeground(java.awt.Color.black);
@@ -705,16 +748,16 @@ public class Main extends javax.swing.JFrame {
                                 .addContainerGap()
                                 .addComponent(jLabel4)))
                         .addGap(18, 18, 18)
-                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jP_PodgladFilmu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)))
+                        .addComponent(jL_ZdjecieFilmu, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jP_PodgladFilmu, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -724,7 +767,7 @@ public class Main extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jL_ZdjecieFilmu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -744,6 +787,63 @@ public class Main extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jB_PodgladLegendMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_PodgladLegendMouseClicked
+        // TODO add your handling code here:
+        tytulFilmu = jL_NazwaLegend.getText();
+        setBorderTittle(tytulFilmu);
+    }//GEN-LAST:event_jB_PodgladLegendMouseClicked
+
+    private void jB_Creed3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_Creed3MouseClicked
+        // TODO add your handling code here:
+        tytulFilmu = jL_NazwaCreed3.getText();
+        setBorderTittle(tytulFilmu);
+    }//GEN-LAST:event_jB_Creed3MouseClicked
+
+    private void jB_PodgladGodzillaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_PodgladGodzillaMouseClicked
+        // TODO add your handling code here:
+        tytulFilmu = jL_NazwaGodzilla.getText();
+        setBorderTittle(tytulFilmu);
+    }//GEN-LAST:event_jB_PodgladGodzillaMouseClicked
+
+    private void jB_PodgladKungFuPanda4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_PodgladKungFuPanda4MouseClicked
+        // TODO add your handling code here:
+        tytulFilmu = jL_NazwaKungFuPanda4.getText();
+        setBorderTittle(tytulFilmu);
+    }//GEN-LAST:event_jB_PodgladKungFuPanda4MouseClicked
+
+    private void jB_PodgladTajnaInwazjaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_PodgladTajnaInwazjaMouseClicked
+        // TODO add your handling code here:
+        tytulFilmu = jL_NazwaTajnaInwazja.getText();
+        setBorderTittle(tytulFilmu);
+    }//GEN-LAST:event_jB_PodgladTajnaInwazjaMouseClicked
+
+    private void jB_PodgladFantasmasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_PodgladFantasmasMouseClicked
+        // TODO add your handling code here:
+        tytulFilmu = jL_NazwaFantasmas.getText();
+        setBorderTittle(tytulFilmu);
+    }//GEN-LAST:event_jB_PodgladFantasmasMouseClicked
+
+    private void jB_PodgladLasuchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_PodgladLasuchMouseClicked
+        // TODO add your handling code here:
+        tytulFilmu = jL_NazwaLasuch.getText();
+        setBorderTittle(tytulFilmu);
+    }//GEN-LAST:event_jB_PodgladLasuchMouseClicked
+
+    private void jB_PodgladMoonKnightMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_PodgladMoonKnightMouseClicked
+        // TODO add your handling code here:
+        tytulFilmu = jL_NazwaMoonKnight.getText();
+        setBorderTittle(tytulFilmu);
+    }//GEN-LAST:event_jB_PodgladMoonKnightMouseClicked
+
+    private void jB_PodgladDaredevilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_PodgladDaredevilMouseClicked
+        // TODO add your handling code here:
+        tytulFilmu = jL_NazwaDaredevil.getText();
+        setBorderTittle(tytulFilmu);
+    }//GEN-LAST:event_jB_PodgladDaredevilMouseClicked
+
+    public void setBorderTittle(String tytulFilmu) {
+        jP_PodgladFilmu.setBorder(javax.swing.BorderFactory.createTitledBorder(null, tytulFilmu, javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 14), java.awt.Color.black)); // NOI18N
+    }
     /**
      * @param args the command line arguments
      */
@@ -798,6 +898,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jCB_OcenaLegend;
     private javax.swing.JComboBox<String> jCB_OcenaMoonKnight;
     private javax.swing.JComboBox<String> jCB_OcenaTajnaInwazja;
+    private javax.swing.JLabel jL_IloscFilmow;
+    private javax.swing.JLabel jL_IloscSeriali;
     private javax.swing.JLabel jL_NazwaCreed3;
     private javax.swing.JLabel jL_NazwaDaredevil;
     private javax.swing.JLabel jL_NazwaFantasmas;
@@ -807,8 +909,11 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jL_NazwaLegend;
     private javax.swing.JLabel jL_NazwaMoonKnight;
     private javax.swing.JLabel jL_NazwaTajnaInwazja;
+    private javax.swing.JLabel jL_OcenaFilmu;
+    private javax.swing.JLabel jL_OpisFilmu;
+    private javax.swing.JLabel jL_SredniaOcena;
+    private javax.swing.JLabel jL_ZdjecieFilmu;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel16;
@@ -821,11 +926,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jP_PodgladFilmu;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -835,7 +936,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
