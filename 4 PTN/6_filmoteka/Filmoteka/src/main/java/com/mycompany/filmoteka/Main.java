@@ -12,6 +12,17 @@ public class Main extends javax.swing.JFrame {
     static String tytulFilmu;
     static int ocenaFilmu;
     static String oF;
+    static String[] opisyFilmu = {
+        "Legenda to biograficzny thriller kryminalny z 2015 roku, napisany i wyreżyserowany przez amerykańskiego reżysera Briana Helgelanda.",
+        "amerykański dramat sportowy z 2023 roku w reżyserii Michaela B. Jordana. Dziewiąta produkcja z serii filmów o Rockym oraz kontynuacja filmu Creed II z 2018 roku. W głównych rolach wystąpili Michael B. Jordan, Tessa Thompson i Jonathan Majors. Film miał premierę 1 marca 2023 roku.",
+        "amerykański monster movie w reżyserii Adama Wingarda. Piąty film należący do franczyzy MonsterVerse studia Legendary Pictures. Jest to piąty w historii film o Godzilli realizowany przez amerykańskie studia filmowe oraz trzeci, w którym wspólnie występuje z King Kongiem.",
+        "amerykański film animowany studia DreamWorks z 2024. Jest to czwarta odsłona serii i kontynuacja filmu Kung Fu Panda 3",
+        "amerykański superbohaterski serial dramatyczny na podstawie historii o tym samym tytule z komiksów wydawnictwa Marvel Comics. Twórcą serialu był Kyle Bradstreet, który odpowiadał za scenariusz. Reżyserią zajął się Ali Selim. Główne role zagrali: Samuel L.",
+        "Fantasmas to amerykański serial komediowy stworzony, wyreżyserowany i napisany przez Julio Torresa, który także w nim występuje. Podąża za Torresem w poszukiwaniu kolczyka ze złotą ostrygą i ludźmi, których spotyka po drodze. Światową premierę miał 30 maja 2024 roku na Festiwalu Telewizyjnym ATX.",
+        "postapokaliptyczny serial przygodowy Netfliksa, na podstawie serii komiksów imprintu Vertigo, o tym samym tytule, stworzonej przez Jeffa Lemire'a. Pierwsza seria pojawiła się w czerwcu 2021 roku. W kolejnym miesiącu ogłoszono zamówienie kolejnej, która pojawiła się 27 kwietnia 2023.",
+        "amerykański superbohaterski serial dramatyczny na podstawie postaci o tym samym pseudonimie z komiksów wydawnictwa Marvel Comics. Twórcą serialu był Jeremy Slater, który odpowiadał za scenariusz, reżyserią zajęli się Mohamed Diab, Justin Benson i Aaron Moorhead.",
+        "amerykański dramatyczny serial superbohaterski z lat 2015–2018 na podstawie komiksów o postaci o tym samym imieniu wydawnictwa Marvel Comics. Twórcą serialu był Drew Goddard, a został on wyprodukowany przez ABC Studios, Marvel Television, DeKnight Productions i Goddard Textiles."
+    };
 
     /**
      * Creates new form Main
@@ -85,8 +96,9 @@ public class Main extends javax.swing.JFrame {
         jL_IloscFilmow = new javax.swing.JLabel();
         jL_SredniaOcena = new javax.swing.JLabel();
         jP_PodgladFilmu = new javax.swing.JPanel();
-        jL_OpisFilmu = new javax.swing.JLabel();
         jL_OcenaFilmu = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTA_OpisFilmu = new javax.swing.JTextArea();
         jL_ZdjecieFilmu = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
@@ -143,14 +155,13 @@ public class Main extends javax.swing.JFrame {
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jCB_OcenaLegend, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jL_NazwaLegend)
                         .addComponent(jB_PodgladLegend))
-                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         jPanel7.setBackground(new java.awt.Color(204, 204, 204));
@@ -196,14 +207,13 @@ public class Main extends javax.swing.JFrame {
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jCB_OcenaCreed3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jL_NazwaCreed3)
                         .addComponent(jB_Creed3))
-                    .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         jPanel8.setBackground(new java.awt.Color(204, 204, 204));
@@ -249,14 +259,13 @@ public class Main extends javax.swing.JFrame {
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jCB_OcenaGodzilla, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jL_NazwaGodzilla)
                         .addComponent(jB_PodgladGodzilla))
-                    .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         jPanel9.setBackground(new java.awt.Color(204, 204, 204));
@@ -302,14 +311,13 @@ public class Main extends javax.swing.JFrame {
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jCB_OcenaKungFuPanda4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jL_NazwaKungFuPanda4)
                         .addComponent(jB_PodgladKungFuPanda4))
-                    .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         jPanel10.setBackground(new java.awt.Color(204, 204, 204));
@@ -355,14 +363,13 @@ public class Main extends javax.swing.JFrame {
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jCB_OcenaTajnaInwazja, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jL_NazwaTajnaInwazja)
                         .addComponent(jB_PodgladTajnaInwazja))
-                    .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         jPanel11.setBackground(new java.awt.Color(204, 204, 204));
@@ -408,14 +415,13 @@ public class Main extends javax.swing.JFrame {
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jCB_OcenaFantasmas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jL_NazwaFantasmas)
                         .addComponent(jB_PodgladFantasmas))
-                    .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         jPanel12.setBackground(new java.awt.Color(204, 204, 204));
@@ -461,14 +467,13 @@ public class Main extends javax.swing.JFrame {
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel12Layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jCB_OcenaLasuch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jL_NazwaLasuch)
                         .addComponent(jB_PodgladLasuch))
-                    .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         jPanel13.setBackground(new java.awt.Color(204, 204, 204));
@@ -514,14 +519,13 @@ public class Main extends javax.swing.JFrame {
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel13Layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jCB_OcenaMoonKnight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jL_NazwaMoonKnight)
                         .addComponent(jB_PodgladMoonKnight))
-                    .addComponent(jLabel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         jPanel14.setBackground(new java.awt.Color(204, 204, 204));
@@ -567,12 +571,12 @@ public class Main extends javax.swing.JFrame {
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel14Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jCB_OcenaDaredevil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jB_PodgladDaredevil)
                     .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jL_NazwaDaredevil))
-                .addGap(0, 18, Short.MAX_VALUE))
+                    .addComponent(jL_NazwaDaredevil)))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -596,22 +600,22 @@ public class Main extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -696,29 +700,34 @@ public class Main extends javax.swing.JFrame {
         jP_PodgladFilmu.setBackground(new java.awt.Color(255, 255, 153));
         jP_PodgladFilmu.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Nazwa filmu", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 14), java.awt.Color.black)); // NOI18N
 
-        jL_OpisFilmu.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jL_OpisFilmu.setForeground(java.awt.Color.black);
-        jL_OpisFilmu.setText("Opis");
-        jL_OpisFilmu.setEnabled(false);
-
         jL_OcenaFilmu.setFont(new java.awt.Font("Dialog", 1, 48)); // NOI18N
         jL_OcenaFilmu.setForeground(java.awt.Color.black);
         jL_OcenaFilmu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jL_OcenaFilmu.setText("1");
+
+        jTA_OpisFilmu.setEditable(false);
+        jTA_OpisFilmu.setBackground(new java.awt.Color(255, 255, 153));
+        jTA_OpisFilmu.setColumns(20);
+        jTA_OpisFilmu.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jTA_OpisFilmu.setForeground(java.awt.Color.black);
+        jTA_OpisFilmu.setLineWrap(true);
+        jTA_OpisFilmu.setRows(5);
+        jTA_OpisFilmu.setText("Opis");
+        jScrollPane1.setViewportView(jTA_OpisFilmu);
 
         javax.swing.GroupLayout jP_PodgladFilmuLayout = new javax.swing.GroupLayout(jP_PodgladFilmu);
         jP_PodgladFilmu.setLayout(jP_PodgladFilmuLayout);
         jP_PodgladFilmuLayout.setHorizontalGroup(
             jP_PodgladFilmuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jP_PodgladFilmuLayout.createSequentialGroup()
-                .addComponent(jL_OpisFilmu, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jL_OcenaFilmu, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE))
         );
         jP_PodgladFilmuLayout.setVerticalGroup(
             jP_PodgladFilmuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jL_OpisFilmu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jL_OcenaFilmu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         jL_ZdjecieFilmu.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
@@ -764,9 +773,8 @@ public class Main extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel4)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                        .addComponent(jLabel4))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jL_ZdjecieFilmu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -783,7 +791,7 @@ public class Main extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -795,6 +803,7 @@ public class Main extends javax.swing.JFrame {
         setBorderTittle(tytulFilmu);
         ocenaFilmu = jCB_OcenaLegend.getSelectedIndex() + 1;
         setOcenaFilmu(ocenaFilmu);
+        jTA_OpisFilmu.setText(opisyFilmu[0]);
     }//GEN-LAST:event_jB_PodgladLegendMouseClicked
 
     private void jB_Creed3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_Creed3MouseClicked
@@ -803,6 +812,7 @@ public class Main extends javax.swing.JFrame {
         setBorderTittle(tytulFilmu);
         ocenaFilmu = jCB_OcenaCreed3.getSelectedIndex() + 1;
         setOcenaFilmu(ocenaFilmu);
+        jTA_OpisFilmu.setText(opisyFilmu[1]);
     }//GEN-LAST:event_jB_Creed3MouseClicked
 
     private void jB_PodgladGodzillaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_PodgladGodzillaMouseClicked
@@ -811,6 +821,7 @@ public class Main extends javax.swing.JFrame {
         setBorderTittle(tytulFilmu);
         ocenaFilmu = jCB_OcenaGodzilla.getSelectedIndex() + 1;
         setOcenaFilmu(ocenaFilmu);
+        jTA_OpisFilmu.setText(opisyFilmu[2]);
     }//GEN-LAST:event_jB_PodgladGodzillaMouseClicked
 
     private void jB_PodgladKungFuPanda4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_PodgladKungFuPanda4MouseClicked
@@ -819,6 +830,7 @@ public class Main extends javax.swing.JFrame {
         setBorderTittle(tytulFilmu);
         ocenaFilmu = jCB_OcenaKungFuPanda4.getSelectedIndex() + 1;
         setOcenaFilmu(ocenaFilmu);
+        jTA_OpisFilmu.setText(opisyFilmu[3]);
     }//GEN-LAST:event_jB_PodgladKungFuPanda4MouseClicked
 
     private void jB_PodgladTajnaInwazjaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_PodgladTajnaInwazjaMouseClicked
@@ -827,6 +839,7 @@ public class Main extends javax.swing.JFrame {
         setBorderTittle(tytulFilmu);
         ocenaFilmu = jCB_OcenaTajnaInwazja.getSelectedIndex() + 1;
         setOcenaFilmu(ocenaFilmu);
+        jTA_OpisFilmu.setText(opisyFilmu[4]);
     }//GEN-LAST:event_jB_PodgladTajnaInwazjaMouseClicked
 
     private void jB_PodgladFantasmasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_PodgladFantasmasMouseClicked
@@ -835,6 +848,7 @@ public class Main extends javax.swing.JFrame {
         setBorderTittle(tytulFilmu);
         ocenaFilmu = jCB_OcenaFantasmas.getSelectedIndex() + 1;
         setOcenaFilmu(ocenaFilmu);
+        jTA_OpisFilmu.setText(opisyFilmu[5]);
     }//GEN-LAST:event_jB_PodgladFantasmasMouseClicked
 
     private void jB_PodgladLasuchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_PodgladLasuchMouseClicked
@@ -843,6 +857,7 @@ public class Main extends javax.swing.JFrame {
         setBorderTittle(tytulFilmu);
         ocenaFilmu = jCB_OcenaLasuch.getSelectedIndex() + 1;
         setOcenaFilmu(ocenaFilmu);
+        jTA_OpisFilmu.setText(opisyFilmu[6]);
     }//GEN-LAST:event_jB_PodgladLasuchMouseClicked
 
     private void jB_PodgladMoonKnightMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_PodgladMoonKnightMouseClicked
@@ -851,6 +866,7 @@ public class Main extends javax.swing.JFrame {
         setBorderTittle(tytulFilmu);
         ocenaFilmu = jCB_OcenaMoonKnight.getSelectedIndex() + 1;
         setOcenaFilmu(ocenaFilmu);
+        jTA_OpisFilmu.setText(opisyFilmu[7]);
     }//GEN-LAST:event_jB_PodgladMoonKnightMouseClicked
 
     private void jB_PodgladDaredevilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_PodgladDaredevilMouseClicked
@@ -859,6 +875,7 @@ public class Main extends javax.swing.JFrame {
         setBorderTittle(tytulFilmu);
         ocenaFilmu = jCB_OcenaDaredevil.getSelectedIndex() + 1;
         setOcenaFilmu(ocenaFilmu);
+        jTA_OpisFilmu.setText(opisyFilmu[8]);
     }//GEN-LAST:event_jB_PodgladDaredevilMouseClicked
 
     public void setBorderTittle(String tytulFilmu) {
@@ -935,7 +952,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jL_NazwaMoonKnight;
     private javax.swing.JLabel jL_NazwaTajnaInwazja;
     private javax.swing.JLabel jL_OcenaFilmu;
-    private javax.swing.JLabel jL_OpisFilmu;
     private javax.swing.JLabel jL_SredniaOcena;
     private javax.swing.JLabel jL_ZdjecieFilmu;
     private javax.swing.JLabel jLabel1;
@@ -965,5 +981,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTA_OpisFilmu;
     // End of variables declaration//GEN-END:variables
 }
