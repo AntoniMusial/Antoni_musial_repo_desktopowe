@@ -10,6 +10,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import javax.swing.SwingUtilities;
@@ -23,6 +24,26 @@ import org.json.JSONObject;
  */
 public class Main extends javax.swing.JFrame {
     static String urlAdress;
+    static String kursEur;
+    static String kursUsd;
+    static String kursChf;
+    static String kursJpy;
+    static String kursGbp;
+    static double kEur;
+    static double kUsd;
+    static double kChf;
+    static double kJpy;
+    static double kGbp;
+    static double iMKEur; // ileMoznaKupic
+    static double iMKUsd;
+    static double iMKChf;
+    static double iMKJpy;
+    static double iMKGbp;
+    static String iMoznaKupicEur;
+    static String iMoznaKupicUsd;
+    static String iMoznaKupicChf;
+    static String iMoznaKupicJpy;
+    static String iMoznaKupicGbp;
 
 public void GetEuro(String urlAdress) {
     ExecutorService executor = Executors.newSingleThreadExecutor();
@@ -57,6 +78,8 @@ public void GetEuro(String urlAdress) {
                     @Override
                     public void run() {
                         jLKursEur.setText(finalResult);
+                        kursEur = finalResult;
+                        kEur = Double.parseDouble(kursEur);
                     }
                 });
             } catch (IOException e) {
@@ -105,6 +128,8 @@ public void GetUsd(String urlAdress) {
                     @Override
                     public void run() {
                         jLKursUsd.setText(finalResult);
+                        kursUsd = finalResult;
+                        kUsd = Double.parseDouble(kursUsd);
                     }
                 });
             } catch (IOException e) {
@@ -153,6 +178,8 @@ public void GetGbp(String urlAdress) {
                     @Override
                     public void run() {
                         jLKursGbp.setText(finalResult);
+                        kursGbp = finalResult;
+                        kGbp = Double.parseDouble(kursGbp);
                     }
                 });
             } catch (IOException e) {
@@ -201,6 +228,8 @@ public void GetChf(String urlAdress) {
                     @Override
                     public void run() {
                         jLKursChr.setText(finalResult);
+                        kursChf = finalResult;
+                        kChf = Double.parseDouble(kursChf);
                     }
                 });
             } catch (IOException e) {
@@ -249,6 +278,8 @@ public void GetJpy(String urlAdress) {
                     @Override
                     public void run() {
                         jLKursJpy.setText(finalResult);
+                        kursJpy = finalResult;
+                        kJpy = Double.parseDouble(kursJpy);
                     }
                 });
             } catch (IOException e) {
@@ -309,6 +340,7 @@ public void GetJpy(String urlAdress) {
         jB_SprzedajEur = new javax.swing.JButton();
         jTF_IleMaszKasy = new javax.swing.JTextField();
         jB_Oblicz = new javax.swing.JButton();
+        jBPobierzKursy = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -343,7 +375,7 @@ public void GetJpy(String urlAdress) {
         jLKursEur.setText("Kurs");
 
         jTF_IleKupicUsd.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jTF_IleKupicUsd.setText("Ile można kupić / sprzedać");
+        jTF_IleKupicUsd.setText("Ile można kupić");
         jTF_IleKupicUsd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTF_IleKupicUsdActionPerformed(evt);
@@ -351,10 +383,10 @@ public void GetJpy(String urlAdress) {
         });
 
         jTF_IleKupicEur.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jTF_IleKupicEur.setText("Ile można kupić / sprzedać");
+        jTF_IleKupicEur.setText("Ile można kupić");
 
         jTF_IleKupicGbp.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jTF_IleKupicGbp.setText("Ile można kupić / sprzedać");
+        jTF_IleKupicGbp.setText("Ile można kupić");
         jTF_IleKupicGbp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTF_IleKupicGbpActionPerformed(evt);
@@ -362,7 +394,7 @@ public void GetJpy(String urlAdress) {
         });
 
         jTF_IleKupicChr.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jTF_IleKupicChr.setText("Ile można kupić / sprzedać");
+        jTF_IleKupicChr.setText("Ile można kupić");
         jTF_IleKupicChr.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTF_IleKupicChrActionPerformed(evt);
@@ -370,7 +402,7 @@ public void GetJpy(String urlAdress) {
         });
 
         jTF_IleKupicJpy.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jTF_IleKupicJpy.setText("Ile można kupić / sprzedać");
+        jTF_IleKupicJpy.setText("Ile można kupić");
         jTF_IleKupicJpy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTF_IleKupicJpyActionPerformed(evt);
@@ -417,9 +449,18 @@ public void GetJpy(String urlAdress) {
 
         jB_Oblicz.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jB_Oblicz.setText("Oblicz");
+        jB_Oblicz.setEnabled(false);
         jB_Oblicz.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jB_ObliczMouseClicked(evt);
+            }
+        });
+
+        jBPobierzKursy.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jBPobierzKursy.setText("Pobierz kursy");
+        jBPobierzKursy.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jBPobierzKursyMouseClicked(evt);
             }
         });
 
@@ -430,10 +471,6 @@ public void GetJpy(String urlAdress) {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTF_IleMaszKasy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jB_Oblicz))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
@@ -485,8 +522,14 @@ public void GetJpy(String urlAdress) {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jB_KupJpy)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jB_SprzedajJpy)))
-                .addContainerGap(50, Short.MAX_VALUE))
+                        .addComponent(jB_SprzedajJpy))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jTF_IleMaszKasy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jBPobierzKursy)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jB_Oblicz)))
+                .addContainerGap(119, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -533,14 +576,11 @@ public void GetJpy(String urlAdress) {
                     .addComponent(jB_KupJpy)
                     .addComponent(jB_SprzedajJpy))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 177, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addComponent(jB_Oblicz))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTF_IleMaszKasy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(1, 1, 1)))
-                .addContainerGap())
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTF_IleMaszKasy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jB_Oblicz)
+                    .addComponent(jBPobierzKursy))
+                .addGap(11, 11, 11))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -578,22 +618,63 @@ public void GetJpy(String urlAdress) {
     }//GEN-LAST:event_jB_SprzedajEurActionPerformed
 
     private void jB_ObliczMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_ObliczMouseClicked
-        // TODO add your handling code here:
-    urlAdress = "https://api.nbp.pl/api/exchangerates/rates/A/EUR/?format=JSON";
-    GetEuro(urlAdress);
-    
-    urlAdress = "https://api.nbp.pl/api/exchangerates/rates/A/USD/?format=JSON";
-    GetUsd(urlAdress);
-    
-    urlAdress = "https://api.nbp.pl/api/exchangerates/rates/A/GBP/?format=JSON";
-    GetGbp(urlAdress);
-    
-    urlAdress = "https://api.nbp.pl/api/exchangerates/rates/A/CHF/?format=JSON";
-    GetChf(urlAdress);
-    
-    urlAdress = "https://api.nbp.pl/api/exchangerates/rates/A/JPY/?format=JSON";
-    GetJpy(urlAdress);
+        // Obliczanie możliwości zakupu po naciśnięciu przycisku "Oblicz"
+        String pieniadzeUzytkownika = jTF_IleMaszKasy.getText();
+        double pU = Double.parseDouble(pieniadzeUzytkownika);
+        System.out.println("Pieniadze uzytkownika: " + pU);
+
+        if (kEur != 0 && kUsd != 0 && kGbp != 0 && kChf != 0 && kJpy != 0) {
+            iMKEur = pU / kEur;
+            iMKUsd = pU / kUsd;
+            iMKGbp = pU / kGbp;
+            iMKChf = pU / kChf;
+            iMKJpy = pU / kJpy;
+
+            // Zaokrąglenie wartości możliwości do kupienia do trzech miejsc po przecinku
+            DecimalFormat df = new DecimalFormat("#.###");
+            iMoznaKupicEur = df.format(iMKEur);
+            jTF_IleKupicEur.setText(iMoznaKupicEur);
+
+            iMoznaKupicUsd = df.format(iMKUsd);
+            jTF_IleKupicUsd.setText(iMoznaKupicUsd);
+
+            iMoznaKupicGbp = df.format(iMKGbp);
+            jTF_IleKupicGbp.setText(iMoznaKupicGbp);
+
+            iMoznaKupicJpy = df.format(iMKJpy);
+            jTF_IleKupicJpy.setText(iMoznaKupicJpy);
+
+            iMoznaKupicChf = df.format(iMKChf);
+            jTF_IleKupicChr.setText(iMoznaKupicChf);
+
+            System.out.println("można kupić " + iMoznaKupicEur + " EUR");
+            System.out.println("można kupić " + iMoznaKupicUsd + " USD");
+            System.out.println("można kupić " + iMoznaKupicChf + " CHF");
+            System.out.println("można kupić " + iMoznaKupicGbp + " GBP");
+            System.out.println("można kupić " + iMoznaKupicJpy + " JPY");
+        } else {
+            System.out.println("Nie udało się pobrać kursów walut.");
+        }
     }//GEN-LAST:event_jB_ObliczMouseClicked
+
+    private void jBPobierzKursyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBPobierzKursyMouseClicked
+        urlAdress = "https://api.nbp.pl/api/exchangerates/rates/A/EUR/?format=JSON";
+        GetEuro(urlAdress);
+
+        urlAdress = "https://api.nbp.pl/api/exchangerates/rates/A/USD/?format=JSON";
+        GetUsd(urlAdress);
+
+        urlAdress = "https://api.nbp.pl/api/exchangerates/rates/A/GBP/?format=JSON";
+        GetGbp(urlAdress);
+
+        urlAdress = "https://api.nbp.pl/api/exchangerates/rates/A/CHF/?format=JSON";
+        GetChf(urlAdress);
+
+        urlAdress = "https://api.nbp.pl/api/exchangerates/rates/A/JPY/?format=JSON";
+        GetJpy(urlAdress);
+        
+        jB_Oblicz.setEnabled(true);
+    }//GEN-LAST:event_jBPobierzKursyMouseClicked
 
     /**
      * @param args the command line arguments
@@ -626,27 +707,12 @@ public void GetJpy(String urlAdress) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Main().setVisible(true);
-                
-                Main main = new Main();
-                urlAdress = "https://api.nbp.pl/api/exchangerates/rates/A/EUR/?format=JSON";
-                main.GetEuro(urlAdress);
-
-                urlAdress = "https://api.nbp.pl/api/exchangerates/rates/A/USD/?format=JSON";
-                main.GetUsd(urlAdress);
-
-                urlAdress = "https://api.nbp.pl/api/exchangerates/rates/A/GBP/?format=JSON";
-                main.GetGbp(urlAdress);
-    
-                urlAdress = "https://api.nbp.pl/api/exchangerates/rates/A/CHF/?format=JSON";
-                main.GetChf(urlAdress);
-
-                urlAdress = "https://api.nbp.pl/api/exchangerates/rates/A/JPY/?format=JSON";
-                main.GetJpy(urlAdress);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBPobierzKursy;
     private javax.swing.JButton jB_KupChr;
     private javax.swing.JButton jB_KupEur;
     private javax.swing.JButton jB_KupGbp;
