@@ -4,17 +4,101 @@
  */
 package com.mycompany.genererowanietablicrejestracyjnych;
 
+import java.util.ArrayList;
+import javax.swing.JRadioButton;
+import com.mycompany.genererowanietablicrejestracyjnych.GetDataFromFile;
+import com.mycompany.genererowanietablicrejestracyjnych.LicencePlateDrawing;
+import com.mycompany.genererowanietablicrejestracyjnych.SaveDataToFile;
+import java.awt.Color;
+import java.awt.List;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Enumeration;
+import javax.swing.AbstractButton;
+import javax.swing.ButtonGroup;
+import javax.swing.ButtonModel;
+
+
 /**
  *
  * @author musialantoni
  */
 public class Main extends javax.swing.JFrame {
+    public static String oznaczenieWybranegoWojewodztwa;
+        
+    public void initializeWojewodztwa() {
+        
+        JRadioButton[] wojewodztwa = {
+            jRBDolnoslaskie,
+            jRBKujawskoPomorskie,
+            jRBLubelskie,
+            jRBLubuskie,
+            jRBLodzkie,
+            jRBMalopolskie,
+            jRBMazowieckie,
+            jRBOpolskie,
+            jRBPodkarpackie,
+            jRBPodlasie,
+            jRBPomorskie,
+            jRBSlaskie,
+            jRBSwietokrzyskie,
+            jRBWarminskoMazurskie,
+            jRBWielkopolskie,
+            jRBZachodnioPomorskie
+        };
+        
+        String[] oznaczenieWojewodztw = {
+            "D",
+            "C",
+            "L",
+            "F",
+            "E",
+            "K",
+            "W",
+            "O",
+            "R",
+            "B",
+            "G",
+            "S",
+            "T",
+            "N",
+            "P",
+            "Z",
+        };
 
+        ButtonModel selectedModel = bGWojewodztwa.getSelection();
+        int i = 0;
+        
+        for (JRadioButton button : wojewodztwa) {
+            if (button.getModel() == selectedModel) {
+                button.setForeground(Color.green);
+                oznaczenieWybranegoWojewodztwa = oznaczenieWojewodztw[i];
+                System.out.println("\tWojewodztwo pasuje. Oznaczenie wojewodztwa: " + oznaczenieWybranegoWojewodztwa);
+            } else {
+                button.setForeground(Color.black);
+                System.out.println("Wojewodztwo " + button.getText() + " nie pasuje.");
+            }
+            i += 1;
+        }
+    }
+    
     /**
      * Creates new form Main
      */
     public Main() {
         initComponents();
+        
+        ActionListener radioButtonActionListener = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                initializeWojewodztwa();
+            }
+        };
+
+        for (Enumeration<AbstractButton> buttons = bGWojewodztwa.getElements(); buttons.hasMoreElements();) {
+            AbstractButton button = buttons.nextElement();
+            button.addActionListener(radioButtonActionListener);
+        }
     }
 
     /**
@@ -26,82 +110,423 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        bGWojewodztwa = new javax.swing.ButtonGroup();
+        jPMain = new javax.swing.JPanel();
+        jPTittle = new javax.swing.JPanel();
+        jLTittle = new javax.swing.JLabel();
+        jPRadioButtons = new javax.swing.JPanel();
+        jRBDolnoslaskie = new javax.swing.JRadioButton();
+        jRBZachodnioPomorskie = new javax.swing.JRadioButton();
+        jRBWielkopolskie = new javax.swing.JRadioButton();
+        jRBWarminskoMazurskie = new javax.swing.JRadioButton();
+        jRBSwietokrzyskie = new javax.swing.JRadioButton();
+        jRBSlaskie = new javax.swing.JRadioButton();
+        jRBPomorskie = new javax.swing.JRadioButton();
+        jRBPodlasie = new javax.swing.JRadioButton();
+        jRBPodkarpackie = new javax.swing.JRadioButton();
+        jRBOpolskie = new javax.swing.JRadioButton();
+        jRBMazowieckie = new javax.swing.JRadioButton();
+        jRBMalopolskie = new javax.swing.JRadioButton();
+        jRBLodzkie = new javax.swing.JRadioButton();
+        jRBLubuskie = new javax.swing.JRadioButton();
+        jRBLubelskie = new javax.swing.JRadioButton();
+        jRBKujawskoPomorskie = new javax.swing.JRadioButton();
+        jPPolandFlagen = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        jBGenerate = new javax.swing.JButton();
+        jPLoadedData = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTA_WygenerowaneTablice = new javax.swing.JTextArea();
+        jBSave = new javax.swing.JButton();
+        jBLoad = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(500, 600));
+        setMaximumSize(null);
         setMinimumSize(new java.awt.Dimension(500, 600));
-        setPreferredSize(new java.awt.Dimension(500, 600));
+        setResizable(false);
 
-        jPanel1.setBackground(java.awt.Color.white);
-        jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 50, 200), 4, true));
-        jPanel1.setMaximumSize(new java.awt.Dimension(500, 600));
-        jPanel1.setMinimumSize(new java.awt.Dimension(500, 600));
-        jPanel1.setPreferredSize(new java.awt.Dimension(500, 600));
+        jPMain.setBackground(java.awt.Color.white);
+        jPMain.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(200, 50, 200), 4, true));
+        jPMain.setMaximumSize(new java.awt.Dimension(500, 600));
+        jPMain.setMinimumSize(new java.awt.Dimension(500, 600));
+        jPMain.setPreferredSize(new java.awt.Dimension(500, 600));
 
-        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel2.setPreferredSize(new java.awt.Dimension(488, 40));
+        jPTittle.setBackground(new java.awt.Color(204, 204, 204));
+        jPTittle.setMaximumSize(new java.awt.Dimension(391, 26));
 
-        jLabel1.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Pół-legalny generator tablic rejestracyjnych");
-        jLabel1.setPreferredSize(new java.awt.Dimension(488, 40));
+        jLTittle.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
+        jLTittle.setForeground(java.awt.Color.black);
+        jLTittle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLTittle.setText("Pół-legalny generator tablic rejestracyjnych");
+        jLTittle.setPreferredSize(null);
+
+        javax.swing.GroupLayout jPTittleLayout = new javax.swing.GroupLayout(jPTittle);
+        jPTittle.setLayout(jPTittleLayout);
+        jPTittleLayout.setHorizontalGroup(
+            jPTittleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLTittle, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 468, Short.MAX_VALUE)
+        );
+        jPTittleLayout.setVerticalGroup(
+            jPTittleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLTittle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
+        jPRadioButtons.setBackground(new java.awt.Color(204, 204, 204));
+        jPRadioButtons.setMaximumSize(new java.awt.Dimension(274, 482));
+        jPRadioButtons.setPreferredSize(new java.awt.Dimension(274, 482));
+
+        jRBDolnoslaskie.setBackground(new java.awt.Color(204, 204, 204));
+        bGWojewodztwa.add(jRBDolnoslaskie);
+        jRBDolnoslaskie.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jRBDolnoslaskie.setForeground(java.awt.Color.black);
+        jRBDolnoslaskie.setText("Dolnośląskie");
+        jRBDolnoslaskie.setToolTipText("");
+
+        jRBZachodnioPomorskie.setBackground(new java.awt.Color(204, 204, 204));
+        bGWojewodztwa.add(jRBZachodnioPomorskie);
+        jRBZachodnioPomorskie.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jRBZachodnioPomorskie.setForeground(java.awt.Color.black);
+        jRBZachodnioPomorskie.setText("Zachodniopomorskie");
+        jRBZachodnioPomorskie.setToolTipText("");
+
+        jRBWielkopolskie.setBackground(new java.awt.Color(204, 204, 204));
+        bGWojewodztwa.add(jRBWielkopolskie);
+        jRBWielkopolskie.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jRBWielkopolskie.setForeground(java.awt.Color.black);
+        jRBWielkopolskie.setText("Wielkopolskie");
+        jRBWielkopolskie.setToolTipText("");
+
+        jRBWarminskoMazurskie.setBackground(new java.awt.Color(204, 204, 204));
+        bGWojewodztwa.add(jRBWarminskoMazurskie);
+        jRBWarminskoMazurskie.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jRBWarminskoMazurskie.setForeground(java.awt.Color.black);
+        jRBWarminskoMazurskie.setText("Warmińsko-Mazurskie");
+        jRBWarminskoMazurskie.setToolTipText("");
+
+        jRBSwietokrzyskie.setBackground(new java.awt.Color(204, 204, 204));
+        bGWojewodztwa.add(jRBSwietokrzyskie);
+        jRBSwietokrzyskie.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jRBSwietokrzyskie.setForeground(java.awt.Color.black);
+        jRBSwietokrzyskie.setText("Świętokrzyskie");
+        jRBSwietokrzyskie.setToolTipText("");
+
+        jRBSlaskie.setBackground(new java.awt.Color(204, 204, 204));
+        bGWojewodztwa.add(jRBSlaskie);
+        jRBSlaskie.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jRBSlaskie.setForeground(java.awt.Color.black);
+        jRBSlaskie.setText("Śląskie");
+        jRBSlaskie.setToolTipText("");
+
+        jRBPomorskie.setBackground(new java.awt.Color(204, 204, 204));
+        bGWojewodztwa.add(jRBPomorskie);
+        jRBPomorskie.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jRBPomorskie.setForeground(java.awt.Color.black);
+        jRBPomorskie.setText("Pomorskie");
+        jRBPomorskie.setToolTipText("");
+
+        jRBPodlasie.setBackground(new java.awt.Color(204, 204, 204));
+        bGWojewodztwa.add(jRBPodlasie);
+        jRBPodlasie.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jRBPodlasie.setForeground(java.awt.Color.black);
+        jRBPodlasie.setText("Podlasie");
+        jRBPodlasie.setToolTipText("");
+
+        jRBPodkarpackie.setBackground(new java.awt.Color(204, 204, 204));
+        bGWojewodztwa.add(jRBPodkarpackie);
+        jRBPodkarpackie.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jRBPodkarpackie.setForeground(java.awt.Color.black);
+        jRBPodkarpackie.setText("Podkarpackie");
+        jRBPodkarpackie.setToolTipText("");
+
+        jRBOpolskie.setBackground(new java.awt.Color(204, 204, 204));
+        bGWojewodztwa.add(jRBOpolskie);
+        jRBOpolskie.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jRBOpolskie.setForeground(java.awt.Color.black);
+        jRBOpolskie.setText("Opolskie");
+        jRBOpolskie.setToolTipText("");
+
+        jRBMazowieckie.setBackground(new java.awt.Color(204, 204, 204));
+        bGWojewodztwa.add(jRBMazowieckie);
+        jRBMazowieckie.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jRBMazowieckie.setForeground(java.awt.Color.black);
+        jRBMazowieckie.setText("Mazowieckie");
+        jRBMazowieckie.setToolTipText("");
+
+        jRBMalopolskie.setBackground(new java.awt.Color(204, 204, 204));
+        bGWojewodztwa.add(jRBMalopolskie);
+        jRBMalopolskie.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jRBMalopolskie.setForeground(java.awt.Color.black);
+        jRBMalopolskie.setText("Małopolskie");
+        jRBMalopolskie.setToolTipText("");
+
+        jRBLodzkie.setBackground(new java.awt.Color(204, 204, 204));
+        bGWojewodztwa.add(jRBLodzkie);
+        jRBLodzkie.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jRBLodzkie.setForeground(java.awt.Color.black);
+        jRBLodzkie.setText("Łódzkie");
+        jRBLodzkie.setToolTipText("");
+
+        jRBLubuskie.setBackground(new java.awt.Color(204, 204, 204));
+        bGWojewodztwa.add(jRBLubuskie);
+        jRBLubuskie.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jRBLubuskie.setForeground(java.awt.Color.black);
+        jRBLubuskie.setSelected(true);
+        jRBLubuskie.setText("Lubuskie");
+        jRBLubuskie.setToolTipText("");
+
+        jRBLubelskie.setBackground(new java.awt.Color(204, 204, 204));
+        bGWojewodztwa.add(jRBLubelskie);
+        jRBLubelskie.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jRBLubelskie.setForeground(java.awt.Color.black);
+        jRBLubelskie.setText("Lubelskie");
+        jRBLubelskie.setToolTipText("");
+
+        jRBKujawskoPomorskie.setBackground(new java.awt.Color(204, 204, 204));
+        bGWojewodztwa.add(jRBKujawskoPomorskie);
+        jRBKujawskoPomorskie.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jRBKujawskoPomorskie.setForeground(java.awt.Color.black);
+        jRBKujawskoPomorskie.setText("Kujawsko-Pomorskie");
+        jRBKujawskoPomorskie.setToolTipText("");
+
+        javax.swing.GroupLayout jPRadioButtonsLayout = new javax.swing.GroupLayout(jPRadioButtons);
+        jPRadioButtons.setLayout(jPRadioButtonsLayout);
+        jPRadioButtonsLayout.setHorizontalGroup(
+            jPRadioButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPRadioButtonsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPRadioButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jRBDolnoslaskie)
+                    .addComponent(jRBZachodnioPomorskie)
+                    .addComponent(jRBWielkopolskie)
+                    .addComponent(jRBWarminskoMazurskie)
+                    .addComponent(jRBSwietokrzyskie)
+                    .addComponent(jRBSlaskie)
+                    .addComponent(jRBPomorskie)
+                    .addComponent(jRBPodlasie)
+                    .addComponent(jRBPodkarpackie)
+                    .addComponent(jRBOpolskie)
+                    .addComponent(jRBMazowieckie)
+                    .addComponent(jRBMalopolskie)
+                    .addComponent(jRBLodzkie)
+                    .addComponent(jRBLubuskie)
+                    .addComponent(jRBLubelskie)
+                    .addComponent(jRBKujawskoPomorskie))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPRadioButtonsLayout.setVerticalGroup(
+            jPRadioButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPRadioButtonsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jRBDolnoslaskie)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRBKujawskoPomorskie)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRBLubelskie)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRBLubuskie)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRBLodzkie)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRBMalopolskie)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRBMazowieckie)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRBOpolskie)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRBPodkarpackie)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRBPodlasie)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRBPomorskie)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRBSlaskie)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRBSwietokrzyskie)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRBWarminskoMazurskie)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRBWielkopolskie)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRBZachodnioPomorskie)
+                .addContainerGap(43, Short.MAX_VALUE))
+        );
+
+        jPPolandFlagen.setBackground(java.awt.Color.white);
+        jPPolandFlagen.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPPolandFlagen.setMaximumSize(new java.awt.Dimension(200, 100));
+        jPPolandFlagen.setMinimumSize(new java.awt.Dimension(200, 100));
+        jPPolandFlagen.setPreferredSize(new java.awt.Dimension(200, 100));
+
+        jPanel2.setBackground(java.awt.Color.red);
+        jPanel2.setAlignmentX(0.0F);
+        jPanel2.setAlignmentY(0.0F);
+        jPanel2.setMaximumSize(new java.awt.Dimension(200, 50));
+        jPanel2.setPreferredSize(new java.awt.Dimension(200, 50));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 480, Short.MAX_VALUE)
+            .addGap(0, 200, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(0, 8, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(0, 50, Short.MAX_VALUE)
         );
 
-        jLabel1.getAccessibleContext().setAccessibleName("Pół-legalny generator tablic rejestracyjnych");
+        javax.swing.GroupLayout jPPolandFlagenLayout = new javax.swing.GroupLayout(jPPolandFlagen);
+        jPPolandFlagen.setLayout(jPPolandFlagenLayout);
+        jPPolandFlagenLayout.setHorizontalGroup(
+            jPPolandFlagenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPPolandFlagenLayout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPPolandFlagenLayout.setVerticalGroup(
+            jPPolandFlagenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPPolandFlagenLayout.createSequentialGroup()
+                .addGap(0, 48, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        jBGenerate.setBackground(new java.awt.Color(204, 204, 204));
+        jBGenerate.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        jBGenerate.setForeground(java.awt.Color.black);
+        jBGenerate.setText("Generuj");
+        jBGenerate.setMaximumSize(new java.awt.Dimension(274, 50));
+        jBGenerate.setPreferredSize(new java.awt.Dimension(274, 50));
+        jBGenerate.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jBGenerateMouseClicked(evt);
+            }
+        });
+        jBGenerate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBGenerateActionPerformed(evt);
+            }
+        });
+
+        jPLoadedData.setBackground(new java.awt.Color(204, 204, 204));
+        jPLoadedData.setMaximumSize(new java.awt.Dimension(200, 376));
+        jPLoadedData.setPreferredSize(new java.awt.Dimension(200, 376));
+
+        jScrollPane1.setMaximumSize(new java.awt.Dimension(200, 376));
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(200, 376));
+
+        jTA_WygenerowaneTablice.setEditable(false);
+        jTA_WygenerowaneTablice.setBackground(new java.awt.Color(204, 204, 204));
+        jTA_WygenerowaneTablice.setColumns(20);
+        jTA_WygenerowaneTablice.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jTA_WygenerowaneTablice.setForeground(java.awt.Color.black);
+        jTA_WygenerowaneTablice.setRows(5);
+        jTA_WygenerowaneTablice.setToolTipText("Wygenerowane tablice...");
+        jTA_WygenerowaneTablice.setMaximumSize(new java.awt.Dimension(200, 376));
+        jTA_WygenerowaneTablice.setPreferredSize(new java.awt.Dimension(200, 376));
+        jScrollPane1.setViewportView(jTA_WygenerowaneTablice);
+
+        javax.swing.GroupLayout jPLoadedDataLayout = new javax.swing.GroupLayout(jPLoadedData);
+        jPLoadedData.setLayout(jPLoadedDataLayout);
+        jPLoadedDataLayout.setHorizontalGroup(
+            jPLoadedDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPLoadedDataLayout.setVerticalGroup(
+            jPLoadedDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jBSave.setBackground(new java.awt.Color(204, 204, 204));
+        jBSave.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jBSave.setForeground(java.awt.Color.black);
+        jBSave.setText("Zapisz");
+        jBSave.setMaximumSize(new java.awt.Dimension(94, 50));
+        jBSave.setPreferredSize(new java.awt.Dimension(94, 50));
+
+        jBLoad.setBackground(new java.awt.Color(204, 204, 204));
+        jBLoad.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jBLoad.setForeground(java.awt.Color.black);
+        jBLoad.setText("Wczytaj");
+        jBLoad.setMaximumSize(new java.awt.Dimension(102, 50));
+        jBLoad.setPreferredSize(new java.awt.Dimension(102, 50));
+
+        javax.swing.GroupLayout jPMainLayout = new javax.swing.GroupLayout(jPMain);
+        jPMain.setLayout(jPMainLayout);
+        jPMainLayout.setHorizontalGroup(
+            jPMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPMainLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 480, Short.MAX_VALUE)
+                .addGroup(jPMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPTittle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPMainLayout.createSequentialGroup()
+                        .addGroup(jPMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPRadioButtons, javax.swing.GroupLayout.DEFAULT_SIZE, 261, Short.MAX_VALUE)
+                            .addComponent(jBGenerate, javax.swing.GroupLayout.DEFAULT_SIZE, 261, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jPPolandFlagen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jPLoadedData, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPMainLayout.createSequentialGroup()
+                                .addComponent(jBSave, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jBLoad, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        jPMainLayout.setVerticalGroup(
+            jPMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPMainLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(546, Short.MAX_VALUE))
+                .addComponent(jPTittle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(jPMainLayout.createSequentialGroup()
+                        .addComponent(jPPolandFlagen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPLoadedData, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPRadioButtons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jBGenerate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jBLoad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jBSave, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPMain, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPMain, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
+    private void jBGenerateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBGenerateActionPerformed
+
+    }//GEN-LAST:event_jBGenerateActionPerformed
+
+    private void jBGenerateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBGenerateMouseClicked
+        String selectedWojewodztwo = null;
+        for (Enumeration<AbstractButton> buttons = bGWojewodztwa.getElements(); buttons.hasMoreElements();) {
+            AbstractButton button = buttons.nextElement();
+            if (button.isSelected()) {
+                selectedWojewodztwo = button.getText();
+                break;
+            }
+        }
+        if (selectedWojewodztwo != null) {
+            String licencePlate = LicencePlateDrawing.generateLicencePlate();
+            jTA_WygenerowaneTablice.setText(licencePlate);
+        } else {
+        }
+    }//GEN-LAST:event_jBGenerateMouseClicked
+
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -123,18 +548,69 @@ public class Main extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Main().setVisible(true);
+                
+                LicencePlateDrawing licencePlateDrawing = new LicencePlateDrawing();
+                
+                
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.ButtonGroup bGWojewodztwa;
+    private javax.swing.JButton jBGenerate;
+    private javax.swing.JButton jBLoad;
+    private javax.swing.JButton jBSave;
+    private javax.swing.JLabel jLTittle;
+    private javax.swing.JPanel jPLoadedData;
+    private javax.swing.JPanel jPMain;
+    private javax.swing.JPanel jPPolandFlagen;
+    private javax.swing.JPanel jPRadioButtons;
+    private javax.swing.JPanel jPTittle;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JRadioButton jRBDolnoslaskie;
+    private javax.swing.JRadioButton jRBKujawskoPomorskie;
+    private javax.swing.JRadioButton jRBLodzkie;
+    private javax.swing.JRadioButton jRBLubelskie;
+    private javax.swing.JRadioButton jRBLubuskie;
+    private javax.swing.JRadioButton jRBMalopolskie;
+    private javax.swing.JRadioButton jRBMazowieckie;
+    private javax.swing.JRadioButton jRBOpolskie;
+    private javax.swing.JRadioButton jRBPodkarpackie;
+    private javax.swing.JRadioButton jRBPodlasie;
+    private javax.swing.JRadioButton jRBPomorskie;
+    private javax.swing.JRadioButton jRBSlaskie;
+    private javax.swing.JRadioButton jRBSwietokrzyskie;
+    private javax.swing.JRadioButton jRBWarminskoMazurskie;
+    private javax.swing.JRadioButton jRBWielkopolskie;
+    private javax.swing.JRadioButton jRBZachodnioPomorskie;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTA_WygenerowaneTablice;
     // End of variables declaration//GEN-END:variables
+
+    private static String string;
+
+    /**
+     * Get the value of string
+     *
+     * @return the value of string
+     */
+    public static String getString() {
+        return string;
+    }
+
+    /**
+     * Set the value of string
+     *
+     * @param string new value of string
+     */
+    public static void setString(String string) {
+        com.mycompany.genererowanietablicrejestracyjnych.Main.string = string;
+    }
 }
