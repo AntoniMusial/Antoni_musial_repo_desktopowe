@@ -10,6 +10,8 @@ package com.mycompany.filmoteka;
  */
 public class Main extends javax.swing.JFrame {
     static String tytulFilmu;
+    static int ocenaFilmu;
+    static String oF;
 
     /**
      * Creates new form Main
@@ -791,58 +793,81 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         tytulFilmu = jL_NazwaLegend.getText();
         setBorderTittle(tytulFilmu);
+        ocenaFilmu = jCB_OcenaLegend.getSelectedIndex() + 1;
+        setOcenaFilmu(ocenaFilmu);
     }//GEN-LAST:event_jB_PodgladLegendMouseClicked
 
     private void jB_Creed3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_Creed3MouseClicked
         // TODO add your handling code here:
         tytulFilmu = jL_NazwaCreed3.getText();
         setBorderTittle(tytulFilmu);
+        ocenaFilmu = jCB_OcenaCreed3.getSelectedIndex() + 1;
+        setOcenaFilmu(ocenaFilmu);
     }//GEN-LAST:event_jB_Creed3MouseClicked
 
     private void jB_PodgladGodzillaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_PodgladGodzillaMouseClicked
         // TODO add your handling code here:
         tytulFilmu = jL_NazwaGodzilla.getText();
         setBorderTittle(tytulFilmu);
+        ocenaFilmu = jCB_OcenaGodzilla.getSelectedIndex() + 1;
+        setOcenaFilmu(ocenaFilmu);
     }//GEN-LAST:event_jB_PodgladGodzillaMouseClicked
 
     private void jB_PodgladKungFuPanda4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_PodgladKungFuPanda4MouseClicked
         // TODO add your handling code here:
         tytulFilmu = jL_NazwaKungFuPanda4.getText();
         setBorderTittle(tytulFilmu);
+        ocenaFilmu = jCB_OcenaKungFuPanda4.getSelectedIndex() + 1;
+        setOcenaFilmu(ocenaFilmu);
     }//GEN-LAST:event_jB_PodgladKungFuPanda4MouseClicked
 
     private void jB_PodgladTajnaInwazjaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_PodgladTajnaInwazjaMouseClicked
         // TODO add your handling code here:
         tytulFilmu = jL_NazwaTajnaInwazja.getText();
         setBorderTittle(tytulFilmu);
+        ocenaFilmu = jCB_OcenaTajnaInwazja.getSelectedIndex() + 1;
+        setOcenaFilmu(ocenaFilmu);
     }//GEN-LAST:event_jB_PodgladTajnaInwazjaMouseClicked
 
     private void jB_PodgladFantasmasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_PodgladFantasmasMouseClicked
         // TODO add your handling code here:
         tytulFilmu = jL_NazwaFantasmas.getText();
         setBorderTittle(tytulFilmu);
+        ocenaFilmu = jCB_OcenaFantasmas.getSelectedIndex() + 1;
+        setOcenaFilmu(ocenaFilmu);
     }//GEN-LAST:event_jB_PodgladFantasmasMouseClicked
 
     private void jB_PodgladLasuchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_PodgladLasuchMouseClicked
         // TODO add your handling code here:
         tytulFilmu = jL_NazwaLasuch.getText();
         setBorderTittle(tytulFilmu);
+        ocenaFilmu = jCB_OcenaLasuch.getSelectedIndex() + 1;
+        setOcenaFilmu(ocenaFilmu);
     }//GEN-LAST:event_jB_PodgladLasuchMouseClicked
 
     private void jB_PodgladMoonKnightMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_PodgladMoonKnightMouseClicked
         // TODO add your handling code here:
         tytulFilmu = jL_NazwaMoonKnight.getText();
         setBorderTittle(tytulFilmu);
+        ocenaFilmu = jCB_OcenaMoonKnight.getSelectedIndex() + 1;
+        setOcenaFilmu(ocenaFilmu);
     }//GEN-LAST:event_jB_PodgladMoonKnightMouseClicked
 
     private void jB_PodgladDaredevilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_PodgladDaredevilMouseClicked
         // TODO add your handling code here:
         tytulFilmu = jL_NazwaDaredevil.getText();
         setBorderTittle(tytulFilmu);
+        ocenaFilmu = jCB_OcenaDaredevil.getSelectedIndex() + 1;
+        setOcenaFilmu(ocenaFilmu);
     }//GEN-LAST:event_jB_PodgladDaredevilMouseClicked
 
     public void setBorderTittle(String tytulFilmu) {
         jP_PodgladFilmu.setBorder(javax.swing.BorderFactory.createTitledBorder(null, tytulFilmu, javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 14), java.awt.Color.black)); // NOI18N
+    }
+    
+    public void setOcenaFilmu(int ocenaFilmu) {
+        oF = String.valueOf(ocenaFilmu);
+        jL_OcenaFilmu.setText(oF);
     }
     /**
      * @param args the command line arguments
