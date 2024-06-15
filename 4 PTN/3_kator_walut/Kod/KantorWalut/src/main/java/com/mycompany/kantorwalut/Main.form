@@ -41,77 +41,81 @@
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="19" pref="19" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jLKursUsd" pref="60" max="32767" attributes="0"/>
-                              <Component id="jLKursEur" max="32767" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="jTF_IleKupicEur" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jB_KupEur" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <Component id="jTF_IleKupicUsd" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jB_KupUsd" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jB_SprzedajUsd" min="-2" max="-2" attributes="0"/>
-                              <Component id="jB_SprzedajEur" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jLKursGbp" min="-2" pref="60" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jTF_IleKupicGbp" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jB_KupGbp" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jB_SprzedajGbp" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jLKursChr" min="-2" pref="60" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jTF_IleKupicChr" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jB_KupChr" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jB_SprzedajChr" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                          <Component id="jLKursJpy" min="-2" pref="60" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jTF_IleKupicJpy" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jB_KupJpy" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jB_SprzedajJpy" min="-2" max="-2" attributes="0"/>
-                      </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jTF_IleMaszKasy" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jBPobierzKursy" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jB_Oblicz" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="19" pref="19" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="jLKursUsd" pref="60" max="32767" attributes="0"/>
+                                      <Component id="jLKursEur" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jTF_IleKupicEur" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jTF_IleKupicUsd" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="jLKursGbp" min="-2" pref="60" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jTF_IleKupicGbp" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="jLKursChr" min="-2" pref="60" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jTF_IleKupicChr" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                                  <Component id="jLKursJpy" min="-2" pref="60" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jTF_IleKupicJpy" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jTF_IleChceszKupicUsd" min="-2" max="-2" attributes="0"/>
+                              <Component id="jTF_IleChceszKupicEur" min="-2" max="-2" attributes="0"/>
+                              <Component id="jTF_IleChceszKupicGbp" min="-2" max="-2" attributes="0"/>
+                              <Component id="jTF_IleChceszKupicChr" min="-2" max="-2" attributes="0"/>
+                              <Component id="jTF_IleChceszKupicJpy" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jB_KupEur" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jB_KupUsd" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jB_KupGbp" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jB_KupChr" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jB_KupJpy" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jB_SprzedajUsd" min="-2" max="-2" attributes="0"/>
+                              <Component id="jB_SprzedajEur" min="-2" max="-2" attributes="0"/>
+                              <Component id="jB_SprzedajGbp" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jB_SprzedajChr" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jB_SprzedajJpy" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="119" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -120,7 +124,6 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jB_KupUsd" min="-2" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -132,45 +135,58 @@
                               <Component id="jLabel5" alignment="3" min="-2" pref="19" max="-2" attributes="0"/>
                               <Component id="jLKursEur" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jTF_IleKupicEur" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                  <Component id="jTF_IleKupicGbp" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jTF_IleChceszKupicGbp" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jB_KupGbp" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jB_SprzedajGbp" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLKursGbp" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                  <Component id="jTF_IleKupicChr" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jTF_IleChceszKupicChr" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jB_KupChr" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jB_SprzedajChr" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLKursChr" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLKursJpy" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jTF_IleKupicJpy" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jTF_IleChceszKupicJpy" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jB_KupJpy" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jB_SprzedajJpy" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jTF_IleChceszKupicUsd" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jB_KupEur" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jTF_IleChceszKupicEur" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jB_SprzedajEur" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <Component id="jB_SprzedajUsd" alignment="0" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                          <Component id="jTF_IleKupicGbp" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jB_KupGbp" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                          <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLKursGbp" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="jB_SprzedajGbp" alignment="0" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                          <Component id="jTF_IleKupicChr" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jB_KupChr" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jB_SprzedajChr" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                          <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLKursChr" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jB_SprzedajUsd" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jB_KupUsd" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLKursJpy" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTF_IleKupicJpy" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jB_KupJpy" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jB_SprzedajJpy" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace pref="177" max="32767" attributes="0"/>
+                  <EmptySpace pref="179" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jTF_IleMaszKasy" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jB_Oblicz" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -264,6 +280,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="jTF_IleKupicUsd">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Dialog" size="14" style="0"/>
             </Property>
@@ -275,6 +292,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="jTF_IleKupicEur">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Dialog" size="14" style="0"/>
             </Property>
@@ -283,6 +301,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="jTF_IleKupicGbp">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Dialog" size="14" style="0"/>
             </Property>
@@ -294,6 +313,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="jTF_IleKupicChr">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Dialog" size="14" style="0"/>
             </Property>
@@ -305,6 +325,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="jTF_IleKupicJpy">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Dialog" size="14" style="0"/>
             </Property>
@@ -321,6 +342,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Kup"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jB_KupUsdActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jB_KupJpy">
           <Properties>
@@ -353,6 +377,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Kup"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jB_KupEurActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jB_SprzedajUsd">
           <Properties>
@@ -426,6 +453,63 @@
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jBPobierzKursyMouseClicked"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTF_IleChceszKupicUsd">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Dialog" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="ile kupi&#x107; / sprzeda&#x107;"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTF_IleChceszKupicUsdActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTF_IleChceszKupicEur">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Dialog" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="ile kupi&#x107; / sprzeda&#x107;"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTF_IleChceszKupicGbp">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Dialog" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="ile kupi&#x107; / sprzeda&#x107;"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTF_IleChceszKupicGbpActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTF_IleChceszKupicChr">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Dialog" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="ile kupi&#x107; / sprzeda&#x107;"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTF_IleChceszKupicChrActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTF_IleChceszKupicJpy">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Dialog" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="ile kupi&#x107; / sprzeda&#x107;"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTF_IleChceszKupicJpyActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

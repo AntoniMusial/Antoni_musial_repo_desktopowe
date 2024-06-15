@@ -341,6 +341,11 @@ public void GetJpy(String urlAdress) {
         jTF_IleMaszKasy = new javax.swing.JTextField();
         jB_Oblicz = new javax.swing.JButton();
         jBPobierzKursy = new javax.swing.JButton();
+        jTF_IleChceszKupicUsd = new javax.swing.JTextField();
+        jTF_IleChceszKupicEur = new javax.swing.JTextField();
+        jTF_IleChceszKupicGbp = new javax.swing.JTextField();
+        jTF_IleChceszKupicChr = new javax.swing.JTextField();
+        jTF_IleChceszKupicJpy = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -374,6 +379,7 @@ public void GetJpy(String urlAdress) {
         jLKursEur.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLKursEur.setText("Kurs");
 
+        jTF_IleKupicUsd.setEditable(false);
         jTF_IleKupicUsd.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jTF_IleKupicUsd.setText("Ile można kupić");
         jTF_IleKupicUsd.addActionListener(new java.awt.event.ActionListener() {
@@ -382,9 +388,11 @@ public void GetJpy(String urlAdress) {
             }
         });
 
+        jTF_IleKupicEur.setEditable(false);
         jTF_IleKupicEur.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jTF_IleKupicEur.setText("Ile można kupić");
 
+        jTF_IleKupicGbp.setEditable(false);
         jTF_IleKupicGbp.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jTF_IleKupicGbp.setText("Ile można kupić");
         jTF_IleKupicGbp.addActionListener(new java.awt.event.ActionListener() {
@@ -393,6 +401,7 @@ public void GetJpy(String urlAdress) {
             }
         });
 
+        jTF_IleKupicChr.setEditable(false);
         jTF_IleKupicChr.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jTF_IleKupicChr.setText("Ile można kupić");
         jTF_IleKupicChr.addActionListener(new java.awt.event.ActionListener() {
@@ -401,6 +410,7 @@ public void GetJpy(String urlAdress) {
             }
         });
 
+        jTF_IleKupicJpy.setEditable(false);
         jTF_IleKupicJpy.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jTF_IleKupicJpy.setText("Ile można kupić");
         jTF_IleKupicJpy.addActionListener(new java.awt.event.ActionListener() {
@@ -411,6 +421,11 @@ public void GetJpy(String urlAdress) {
 
         jB_KupUsd.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jB_KupUsd.setText("Kup");
+        jB_KupUsd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_KupUsdActionPerformed(evt);
+            }
+        });
 
         jB_KupJpy.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jB_KupJpy.setText("Kup");
@@ -423,6 +438,11 @@ public void GetJpy(String urlAdress) {
 
         jB_KupEur.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jB_KupEur.setText("Kup");
+        jB_KupEur.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_KupEurActionPerformed(evt);
+            }
+        });
 
         jB_SprzedajUsd.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jB_SprzedajUsd.setText("Sprzedaj");
@@ -464,6 +484,46 @@ public void GetJpy(String urlAdress) {
             }
         });
 
+        jTF_IleChceszKupicUsd.setEditable(false);
+        jTF_IleChceszKupicUsd.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jTF_IleChceszKupicUsd.setText("ile kupić / sprzedać");
+        jTF_IleChceszKupicUsd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTF_IleChceszKupicUsdActionPerformed(evt);
+            }
+        });
+
+        jTF_IleChceszKupicEur.setEditable(false);
+        jTF_IleChceszKupicEur.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jTF_IleChceszKupicEur.setText("ile kupić / sprzedać");
+
+        jTF_IleChceszKupicGbp.setEditable(false);
+        jTF_IleChceszKupicGbp.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jTF_IleChceszKupicGbp.setText("ile kupić / sprzedać");
+        jTF_IleChceszKupicGbp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTF_IleChceszKupicGbpActionPerformed(evt);
+            }
+        });
+
+        jTF_IleChceszKupicChr.setEditable(false);
+        jTF_IleChceszKupicChr.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jTF_IleChceszKupicChr.setText("ile kupić / sprzedać");
+        jTF_IleChceszKupicChr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTF_IleChceszKupicChrActionPerformed(evt);
+            }
+        });
+
+        jTF_IleChceszKupicJpy.setEditable(false);
+        jTF_IleChceszKupicJpy.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jTF_IleChceszKupicJpy.setText("ile kupić / sprzedać");
+        jTF_IleChceszKupicJpy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTF_IleChceszKupicJpyActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -472,71 +532,72 @@ public void GetJpy(String urlAdress) {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel5))
-                        .addGap(19, 19, 19)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLKursUsd, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
-                            .addComponent(jLKursEur, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jTF_IleKupicEur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jB_KupEur))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jTF_IleKupicUsd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jB_KupUsd)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jB_SprzedajUsd)
-                            .addComponent(jB_SprzedajEur)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLKursGbp, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTF_IleKupicGbp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jB_KupGbp)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jB_SprzedajGbp))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLKursChr, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTF_IleKupicChr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jB_KupChr)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jB_SprzedajChr))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(23, 23, 23)
-                        .addComponent(jLKursJpy, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTF_IleKupicJpy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jB_KupJpy)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jB_SprzedajJpy))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jTF_IleMaszKasy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jBPobierzKursy)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jB_Oblicz)))
-                .addContainerGap(119, Short.MAX_VALUE))
+                        .addComponent(jB_Oblicz)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel5))
+                                .addGap(19, 19, 19)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLKursUsd, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+                                    .addComponent(jLKursEur, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTF_IleKupicEur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTF_IleKupicUsd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLKursGbp, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTF_IleKupicGbp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLKursChr, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTF_IleKupicChr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(23, 23, 23)
+                                .addComponent(jLKursJpy, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTF_IleKupicJpy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTF_IleChceszKupicUsd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTF_IleChceszKupicEur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTF_IleChceszKupicGbp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTF_IleChceszKupicChr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTF_IleChceszKupicJpy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jB_KupEur)
+                            .addComponent(jB_KupUsd)
+                            .addComponent(jB_KupGbp)
+                            .addComponent(jB_KupChr)
+                            .addComponent(jB_KupJpy))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jB_SprzedajUsd)
+                            .addComponent(jB_SprzedajEur)
+                            .addComponent(jB_SprzedajGbp)
+                            .addComponent(jB_SprzedajChr)
+                            .addComponent(jB_SprzedajJpy))
+                        .addGap(38, 38, 38))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jB_KupUsd)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
@@ -546,36 +607,46 @@ public void GetJpy(String urlAdress) {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLKursEur)
-                            .addComponent(jTF_IleKupicEur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTF_IleKupicEur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jTF_IleKupicGbp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTF_IleChceszKupicGbp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jB_KupGbp)
+                                .addComponent(jB_SprzedajGbp))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel4)
+                                .addComponent(jLKursGbp)))
+                        .addGap(11, 11, 11)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jTF_IleKupicChr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTF_IleChceszKupicChr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jB_KupChr)
+                                .addComponent(jB_SprzedajChr))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel3)
+                                .addComponent(jLKursChr)))
+                        .addGap(11, 11, 11)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(jLKursJpy)
+                            .addComponent(jTF_IleKupicJpy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTF_IleChceszKupicJpy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jB_KupJpy)
+                            .addComponent(jB_SprzedajJpy)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jTF_IleChceszKupicUsd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jB_KupEur)
+                            .addComponent(jTF_IleChceszKupicEur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jB_SprzedajEur)))
-                    .addComponent(jB_SprzedajUsd))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTF_IleKupicGbp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jB_KupGbp))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel4)
-                        .addComponent(jLKursGbp))
-                    .addComponent(jB_SprzedajGbp))
-                .addGap(11, 11, 11)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTF_IleKupicChr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jB_KupChr)
-                        .addComponent(jB_SprzedajChr))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel3)
-                        .addComponent(jLKursChr)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLKursJpy)
-                    .addComponent(jTF_IleKupicJpy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jB_KupJpy)
-                    .addComponent(jB_SprzedajJpy))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 177, Short.MAX_VALUE)
+                        .addComponent(jB_SprzedajUsd)
+                        .addComponent(jB_KupUsd)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 179, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTF_IleMaszKasy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jB_Oblicz)
@@ -676,6 +747,30 @@ public void GetJpy(String urlAdress) {
         jB_Oblicz.setEnabled(true);
     }//GEN-LAST:event_jBPobierzKursyMouseClicked
 
+    private void jTF_IleChceszKupicUsdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTF_IleChceszKupicUsdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTF_IleChceszKupicUsdActionPerformed
+
+    private void jTF_IleChceszKupicGbpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTF_IleChceszKupicGbpActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTF_IleChceszKupicGbpActionPerformed
+
+    private void jTF_IleChceszKupicChrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTF_IleChceszKupicChrActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTF_IleChceszKupicChrActionPerformed
+
+    private void jTF_IleChceszKupicJpyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTF_IleChceszKupicJpyActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTF_IleChceszKupicJpyActionPerformed
+
+    private void jB_KupUsdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_KupUsdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jB_KupUsdActionPerformed
+
+    private void jB_KupEurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_KupEurActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jB_KupEurActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -735,6 +830,11 @@ public void GetJpy(String urlAdress) {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTF_IleChceszKupicChr;
+    private javax.swing.JTextField jTF_IleChceszKupicEur;
+    private javax.swing.JTextField jTF_IleChceszKupicGbp;
+    private javax.swing.JTextField jTF_IleChceszKupicJpy;
+    private javax.swing.JTextField jTF_IleChceszKupicUsd;
     private javax.swing.JTextField jTF_IleKupicChr;
     private javax.swing.JTextField jTF_IleKupicEur;
     private javax.swing.JTextField jTF_IleKupicGbp;
